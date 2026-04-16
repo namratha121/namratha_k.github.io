@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "projects/hw1/index.html",
+    "href": "projects/hw1/index.html",
+    "title": "A/B Testing a Call to Action",
+    "section": "",
+    "text": "Every website with a newsletter faces the same quiet dilemma: what do you actually say to get someone to sign up? The words you choose — your “call to action,” or CTA — can have a surprisingly large effect on whether a visitor clicks or scrolls past.\nOn our homepage, visitors can subscribe to our newsletter. We have two candidate CTAs we want to compare:\n\nCTA A: “Sign up for our newsletter here!”\nCTA B: “Stay up to date — join our newsletter!”\n\nRather than guessing which one works better, we ran an A/B test. In an A/B test, incoming visitors are randomly assigned — like a coin flip — to see either CTA A or CTA B. We then compare the sign-up rates between the two groups. Randomization is the key ingredient: because assignment is random, any difference in sign-up rates is attributable to the CTA, not to differences in who happened to visit on which day.\nThis post walks through the statistical machinery behind that analysis — hypothesis testing, the Central Limit Theorem, bootstrap standard errors, and some common pitfalls — using simulation so we can see these ideas in action."
+  },
+  {
+    "objectID": "projects/hw1/index.html#introduction",
+    "href": "projects/hw1/index.html#introduction",
+    "title": "A/B Testing a Call to Action",
+    "section": "",
+    "text": "Every website with a newsletter faces the same quiet dilemma: what do you actually say to get someone to sign up? The words you choose — your “call to action,” or CTA — can have a surprisingly large effect on whether a visitor clicks or scrolls past.\nOn our homepage, visitors can subscribe to our newsletter. We have two candidate CTAs we want to compare:\n\nCTA A: “Sign up for our newsletter here!”\nCTA B: “Stay up to date — join our newsletter!”\n\nRather than guessing which one works better, we ran an A/B test. In an A/B test, incoming visitors are randomly assigned — like a coin flip — to see either CTA A or CTA B. We then compare the sign-up rates between the two groups. Randomization is the key ingredient: because assignment is random, any difference in sign-up rates is attributable to the CTA, not to differences in who happened to visit on which day.\nThis post walks through the statistical machinery behind that analysis — hypothesis testing, the Central Limit Theorem, bootstrap standard errors, and some common pitfalls — using simulation so we can see these ideas in action."
+  },
+  {
+    "objectID": "projects/hw1/index.html#the-ab-test-as-a-statistical-problem",
+    "href": "projects/hw1/index.html#the-ab-test-as-a-statistical-problem",
+    "title": "A/B Testing a Call to Action",
+    "section": "The A/B Test as a Statistical Problem",
+    "text": "The A/B Test as a Statistical Problem\nEach visitor either signs up or doesn’t — a binary outcome. We model each visitor’s outcome as a draw from a Bernoulli distribution: with probability \\(\\pi\\), the visitor signs up (outcome = 1); otherwise they don’t (outcome = 0).\nBecause the CTA a visitor sees may influence their decision, we allow the sign-up probability to differ between groups:\n\nVisitors seeing CTA A sign up with probability \\(\\pi_A\\)\nVisitors seeing CTA B sign up with probability \\(\\pi_B\\)\n\nThe quantity we care about is the difference in sign-up rates:\n\\[\\theta = \\pi_A - \\pi_B\\]\nIf \\(\\theta &gt; 0\\), CTA A is better. If \\(\\theta &lt; 0\\), CTA B wins. If \\(\\theta = 0\\), it doesn’t matter which we use.\nWe estimate \\(\\theta\\) with the difference in sample proportions:\n\\[\\hat\\theta = \\bar{X}_A - \\bar{X}_B = \\hat\\pi_A - \\hat\\pi_B\\]\nwhere \\(\\bar{X}_A\\) is just the fraction of CTA A visitors who signed up (and similarly for B). Since each observation is 0 or 1, the sample mean equals the sample proportion. This estimator is intuitive, easy to compute, and has very nice statistical properties — as we’ll see."
+  },
+  {
+    "objectID": "projects/hw1/index.html#simulating-data",
+    "href": "projects/hw1/index.html#simulating-data",
+    "title": "A/B Testing a Call to Action",
+    "section": "Simulating Data",
+    "text": "Simulating Data\nIn a real experiment, we wouldn’t know the true values of \\(\\pi_A\\) and \\(\\pi_B\\). But for the purpose of this walkthrough, we get to play the role of the universe: we’ll set the true parameters ourselves, run the test, and then check whether our statistical tools recover the truth we planted.\nWe set:\n\n\\(\\pi_A = 0.22\\) — 22% of visitors seeing CTA A sign up\n\\(\\pi_B = 0.18\\) — 18% of visitors seeing CTA B sign up\nTrue difference: \\(\\theta = 0.04\\)\n\nWe simulate 1,000 visitors per group (2,000 total):\n\nnp.random.seed(42)\npi_A = 0.22\npi_B = 0.18\nn = 1000\n\ngroup_A = np.random.binomial(1, pi_A, n)\ngroup_B = np.random.binomial(1, pi_B, n)\n\ntheta_hat = group_A.mean() - group_B.mean()\nprint(f\"Observed difference (theta_hat): {theta_hat:.4f}\")\n\nObserved difference (theta_hat): 0.0380\n\n\nOur observed difference is close to the true value of 0.04 — a promising sign. But how close is close enough, and how confident should we be? That’s what the rest of this post addresses."
+  },
+  {
+    "objectID": "projects/hw1/index.html#the-law-of-large-numbers",
+    "href": "projects/hw1/index.html#the-law-of-large-numbers",
+    "title": "A/B Testing a Call to Action",
+    "section": "The Law of Large Numbers",
+    "text": "The Law of Large Numbers\nThe Law of Large Numbers (LLN) states that as your sample size grows, the sample mean converges to the true population mean. For our estimator, this means \\(\\hat\\theta = \\bar{X}_A - \\bar{X}_B\\) will get closer and closer to the true \\(\\theta = 0.04\\) as we collect more data. The LLN is the foundation of why the A/B test works at all — it guarantees we can learn the truth if we’re patient enough.\nWe can watch this convergence happen in real time. For each of our 1,000 simulated pairs of observations, we compute the running (cumulative) average of the pairwise differences:\n\ndiffs = group_A - group_B\ncumulative_avg = np.cumsum(diffs) / np.arange(1, n + 1)\n\n\n\n\n\n\n\n\n\n\nWith only a handful of observations, the estimate bounces wildly — it briefly suggests CTA B is much better, then overestimates CTA A’s advantage. But as the sample grows, the noise cancels out and the running average settles close to the true difference of 0.04 (the red dashed line). By around 400 observations, the estimate has largely stabilized.\nThis is the LLN at work: more data doesn’t just give you a better estimate, it guarantees convergence to the truth. It’s also a reminder that small samples can mislead — an analyst who stopped at 50 observations might have drawn a very wrong conclusion."
+  },
+  {
+    "objectID": "projects/hw1/index.html#bootstrap-standard-errors",
+    "href": "projects/hw1/index.html#bootstrap-standard-errors",
+    "title": "A/B Testing a Call to Action",
+    "section": "Bootstrap Standard Errors",
+    "text": "Bootstrap Standard Errors\nKnowing our estimate will converge to the truth is reassuring, but it leaves open an important question: how precise is our estimate with the data we actually have? A single number like \\(\\hat\\theta = 0.04\\) is a point estimate — our best guess, but it doesn’t communicate uncertainty. For that, we need a confidence interval.\nOne elegant way to quantify uncertainty is the bootstrap. The idea is simple: since we can’t re-run the experiment thousands of times in reality, we simulate re-running it by resampling from our own data. Specifically:\n\nDraw a new sample of size 1,000 with replacement from our observed CTA A data.\nDo the same for CTA B.\nCompute \\(\\hat\\theta^* = \\bar{X}_A^* - \\bar{X}_B^*\\) on these resamples.\nRepeat 1,000 times. The standard deviation of those \\(\\hat\\theta^*\\) values is our bootstrap standard error.\n\n\nB = 1000\nboot_estimates = np.array([\n    np.random.choice(group_A, size=n, replace=True).mean() -\n    np.random.choice(group_B, size=n, replace=True).mean()\n    for _ in range(B)\n])\n\nboot_se = boot_estimates.std()\n\npi_hat_A = group_A.mean()\npi_hat_B = group_B.mean()\nanalytical_se = np.sqrt(\n    pi_hat_A * (1 - pi_hat_A) / n +\n    pi_hat_B * (1 - pi_hat_B) / n\n)\n\nci_lower = theta_hat - 1.96 * boot_se\nci_upper = theta_hat + 1.96 * boot_se\n\nprint(f\"Bootstrap SE:   {boot_se:.5f}\")\nprint(f\"Analytical SE:  {analytical_se:.5f}\")\nprint(f\"95% CI:         [{ci_lower:.4f}, {ci_upper:.4f}]\")\n\nBootstrap SE:   0.01765\nAnalytical SE:  0.01777\n95% CI:         [0.0034, 0.0726]\n\n\n\n\n\n\n\n\n\n\nStandard Error Estimates\n\n\nBootstrap vs. Analytical Formula\n\n\nMethod\nStandard Error\n\n\n\n\nBootstrap\n0.01765\n\n\nAnalytical Formula\n0.01777\n\n\n\n\n\n\n\n\nThe two methods agree closely — both estimate the variability of \\(\\hat\\theta\\) across hypothetical repeated experiments. The analytical formula derives the answer mathematically; the bootstrap derives it empirically.\nUsing the bootstrap standard error, our 95% confidence interval for \\(\\theta\\) is approximately \\([`{ci_lower:.4f}`,\\ `{ci_upper:.4f}`]\\). Since this interval doesn’t contain zero, we have evidence that CTA A outperforms CTA B."
+  },
+  {
+    "objectID": "projects/hw1/index.html#the-central-limit-theorem",
+    "href": "projects/hw1/index.html#the-central-limit-theorem",
+    "title": "A/B Testing a Call to Action",
+    "section": "The Central Limit Theorem",
+    "text": "The Central Limit Theorem\nThe confidence interval above relied on a crucial fact: for large samples, \\(\\hat\\theta\\) is approximately normally distributed — even though the underlying data are Bernoulli (just 0s and 1s, which couldn’t look less normal). This result is the Central Limit Theorem (CLT), arguably the most important theorem in applied statistics.\nThe CLT says: regardless of the shape of the underlying distribution, the sampling distribution of the sample mean becomes approximately Normal as \\(n\\) grows. Since \\(\\hat\\theta\\) is a difference of two sample means, it inherits this property.\nTo see this visually, we repeat our experiment 1,000 times at four different sample sizes — \\(n \\in \\{25, 50, 100, 500\\}\\) — and plot the distribution of \\(\\hat\\theta\\) each time:\n\ndef simulate_theta_hat(n_sim, reps=1000):\n    return np.array([\n        np.random.binomial(1, pi_A, n_sim).mean() -\n        np.random.binomial(1, pi_B, n_sim).mean()\n        for _ in range(reps)\n    ])\n\nsample_sizes = [25, 50, 100, 500]\nclt_results = {n_val: simulate_theta_hat(n_val) for n_val in sample_sizes}\n\n\n\n\n\n\n\n\n\n\nAt \\(n = 25\\), the histogram is jagged and irregular — the Bernoulli origins of the data are still visible. By \\(n = 100\\), a bell shape is clearly emerging, centered on the true value of 0.04. At \\(n = 500\\), the distribution is smooth, tightly concentrated, and convincingly normal.\nThis is the CLT in action. It’s what allows us to use Normal-distribution-based tools (z-scores, confidence intervals, p-values) on data that are fundamentally binary. Notice also that the distributions get narrower as \\(n\\) grows — larger samples give more precise estimates, consistent with what the Law of Large Numbers told us earlier."
+  },
+  {
+    "objectID": "projects/hw1/index.html#hypothesis-testing",
+    "href": "projects/hw1/index.html#hypothesis-testing",
+    "title": "A/B Testing a Call to Action",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\nNow we’re ready for a formal hypothesis test. The goal is to assess whether our data provide enough evidence to conclude that the two CTAs actually differ in effectiveness — or whether the observed \\(\\hat\\theta\\) could plausibly have arisen by chance even if the CTAs were identical.\nWe frame this as two competing hypotheses:\n\nNull hypothesis \\(H_0: \\theta = 0\\) — the CTAs perform equally; any observed difference is noise.\nAlternative hypothesis \\(H_1: \\theta \\neq 0\\) — the CTAs differ in sign-up rates.\n\nWe compute a test statistic that tells us how many standard errors our estimate is away from zero:\n\\[z = \\frac{\\hat\\theta - 0}{SE(\\hat\\theta)}\\]\nBy the CLT, \\(\\hat\\theta\\) is approximately Normal for large samples. Under \\(H_0\\) (where the true mean is 0), dividing by its standard deviation gives a standard Normal distribution: \\(z \\;\\dot\\sim\\; N(0, 1)\\). This lets us compute a p-value: the probability of observing a \\(|z|\\) this large or larger if \\(H_0\\) were true.\n\nWhy do people call this a “t-test”? The classical t-test assumes the underlying data are Normal and the variance is unknown — producing an exact t-distribution. Our data are Bernoulli, not Normal, so there’s no exact t-distribution result here. The CLT gives us approximate Normality, and since we estimate the SE from data, we’re technically running a z-test. In practice, for large samples the t- and z-distributions are nearly identical — but it’s worth knowing why.\n\n\nse_hat = analytical_se\nz_stat = theta_hat / se_hat\np_value = 2 * (1 - stats.norm.cdf(abs(z_stat)))\n\nprint(f\"Point estimate:  {theta_hat:.4f}\")\nprint(f\"Standard error:  {se_hat:.5f}\")\nprint(f\"Z-statistic:     {z_stat:.3f}\")\nprint(f\"P-value:         {p_value:.4f}\")\n\nPoint estimate:  0.0380\nStandard error:  0.01777\nZ-statistic:     2.139\nP-value:         0.0325\n\n\n\n\n\n\n\n\n\n\nTwo-Sample Z-Test Results\n\n\nTesting H₀: θ = 0 (no difference in sign-up rates)\n\n\nQuantity\nValue\n\n\n\n\nPoint Estimate (θ̂)\n0.0380\n\n\nStandard Error\n0.01777\n\n\nZ-Statistic\n2.139\n\n\nP-Value\n0.0325\n\n\n\n\n\n\n\n\nWith a z-statistic well above 1.96 and a p-value below 0.05, we reject the null hypothesis. The data provide strong evidence that CTA A produces a higher sign-up rate than CTA B. Of course, in this simulation we know the truth — the test is correctly identifying the 0.04 difference we planted."
+  },
+  {
+    "objectID": "projects/hw1/index.html#the-t-test-as-a-regression",
+    "href": "projects/hw1/index.html#the-t-test-as-a-regression",
+    "title": "A/B Testing a Call to Action",
+    "section": "The T-Test as a Regression",
+    "text": "The T-Test as a Regression\nHere’s a satisfying insight: the two-sample test we just ran is mathematically equivalent to a simple linear regression. Understanding this connection unlocks a much more flexible toolkit.\nThe setup: stack all 2,000 observations into a single dataset with two columns — \\(Y_i\\) (the outcome: 1 if signed up, 0 if not) and \\(D_i\\) (a group indicator: 1 for CTA A, 0 for CTA B). Then fit:\n\\[Y_i = \\beta_0 + \\beta_1 D_i + \\varepsilon_i\\]\nThe coefficients have a clean interpretation:\n\nWhen \\(D_i = 0\\) (CTA B): \\(E[Y_i] = \\beta_0\\), so \\(\\hat\\beta_0 = \\hat\\pi_B\\)\nWhen \\(D_i = 1\\) (CTA A): \\(E[Y_i] = \\beta_0 + \\beta_1\\), so \\(\\hat\\beta_0 + \\hat\\beta_1 = \\hat\\pi_A\\)\nTherefore: \\(\\hat\\beta_1 = \\hat\\pi_A - \\hat\\pi_B = \\hat\\theta\\)\n\nThe OLS coefficient on the group indicator is numerically identical to our difference-in-means estimator.\n\nY = np.concatenate([group_A, group_B])\nD = np.concatenate([np.ones(n), np.zeros(n)])\nX = sm.add_constant(D)\n\nfit = sm.OLS(Y, X).fit()\nprint(fit.summary2().tables[1].round(5))\n\n       Coef.  Std.Err.         t    P&gt;|t|   [0.025   0.975]\nconst  0.178   0.01257  14.16146  0.00000  0.15335  0.20265\nx1     0.038   0.01778   2.13775  0.03266  0.00314  0.07286\n\n\n\n\n\n\n\n\n\n\nOLS Regression: Signup ~ CTA Indicator\n\n\nThe coefficient on D is identical to the two-sample difference in means\n\n\nTerm\nEstimate\nStd. Error\nT-Statistic\nP-Value\n\n\n\n\nIntercept (β₀ = π̂_B)\n0.178\n0.01257\n14.161\n0.0\n\n\nCTA A Indicator (β₁ = θ̂)\n0.038\n0.01778\n2.138\n0.03266\n\n\n\n\n\n\n\n\nThe regression \\(\\hat\\beta_1\\) matches \\(\\hat\\theta\\) exactly. The t-statistic and p-value are nearly identical to our z-test (with a small difference because OLS uses a pooled variance assumption, while our earlier formula allowed separate variances per group).\nWhy does this matter? Because the regression framework is far more flexible. With a simple change to the model formula, you can add control variables, test multiple CTAs simultaneously, or look for subgroup effects — all while producing the same correct inference in the simple case."
+  },
+  {
+    "objectID": "projects/hw1/index.html#the-problem-with-peeking",
+    "href": "projects/hw1/index.html#the-problem-with-peeking",
+    "title": "A/B Testing a Call to Action",
+    "section": "The Problem with Peeking",
+    "text": "The Problem with Peeking\nImagine your boss is impatient. Instead of waiting for all 1,000 visitors per group, she wants to check the results every 100 visitors. If any of those 10 interim tests hits \\(p &lt; 0.05\\), she wants to declare a winner and stop.\nThis practice — commonly called peeking — is one of the most widespread mistakes in A/B testing. A single test at \\(\\alpha = 0.05\\) has a 5% false positive rate. But each peek is another independent chance to get lucky in the wrong direction. Across 10 peeks, the cumulative probability of at least one false positive climbs well above 5%.\nLet’s demonstrate this. We set up a world where there is no true difference (\\(\\pi_A = \\pi_B = 0.20\\), so \\(\\theta = 0\\)), then simulate 10,000 experiments:\n\nnp.random.seed(123)\nn_experiments = 10000\npeek_points = np.arange(100, 1001, 100)\n\nfalse_positive_peek = np.zeros(n_experiments, dtype=bool)\nfalse_positive_single = np.zeros(n_experiments, dtype=bool)\n\nfor i in range(n_experiments):\n    A_null = np.random.binomial(1, 0.20, 1000)\n    B_null = np.random.binomial(1, 0.20, 1000)\n\n    for k in peek_points:\n        pA = A_null[:k].mean()\n        pB = B_null[:k].mean()\n        se_k = np.sqrt(pA*(1-pA)/k + pB*(1-pB)/k)\n        if se_k == 0:\n            continue\n        if 2 * (1 - stats.norm.cdf(abs((pA - pB) / se_k))) &lt; 0.05:\n            false_positive_peek[i] = True\n            break\n\n    pA_f, pB_f = A_null.mean(), B_null.mean()\n    se_f = np.sqrt(pA_f*(1-pA_f)/1000 + pB_f*(1-pB_f)/1000)\n    if se_f &gt; 0:\n        false_positive_single[i] = (\n            2*(1-stats.norm.cdf(abs((pA_f-pB_f)/se_f))) &lt; 0.05\n        )\n\nfp_peek_rate = false_positive_peek.mean()\nfp_single_rate = false_positive_single.mean()\n\nprint(f\"Single-test FP rate: {fp_single_rate:.3f}\")\nprint(f\"Peeking FP rate:     {fp_peek_rate:.3f}\")\n\nSingle-test FP rate: 0.052\nPeeking FP rate:     0.199\n\n\n\n\n\n\n\n\n\n\nThe Cost of Peeking\n\n\nEmpirical false positive rates under H₀: θ = 0 (10,000 simulations)\n\n\nStrategy\nNominal α\nEmpirical False Positive Rate\n\n\n\n\nSingle test at n = 1,000\n5%\n5.2%\n\n\nPeek every 100 obs (10 peeks total)\n5%\n19.9%\n\n\n\n\n\n\n\n\nA single end-of-experiment test produces a false positive rate right around the promised 5%. But peeking 10 times inflates it to around {fp_peek_rate:.0%} — roughly three times the nominal level.\nIn practice, this means a company running A/B tests with peeking will regularly declare winners that don’t exist. The fix? Commit to your sample size before running the experiment and test exactly once at the end. If early stopping is genuinely necessary, use methods designed for it — like sequential testing or the Bonferroni correction — which account for multiple looks explicitly.\n\nThis post was written as an exploration of classical frequentist statistics through simulation. All data are synthetic."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Namratha K",
+    "section": "",
+    "text": "Welcome to my website!"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "My Resume",
+    "section": "",
+    "text": "Download PDF file."
+  },
+  {
+    "objectID": "resume.html#summary",
+    "href": "resume.html#summary",
+    "title": "My Resume",
+    "section": "Summary",
+    "text": "Summary\nBusiness Analytics graduate student skilled in SQL, Python, and Tableau, with experience in data analysis and predictive modeling. Interested in marketing analytics, business analytics, and data analytics roles."
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "My Resume",
+    "section": "Education",
+    "text": "Education\nMaster of Science, Business Analytics University of California, San Diego — GPA: 3.8/4.0 (Expected Dec 2026) Relevant Coursework: SQL, Python, Gen AI, Marketing Analytics, Consumer Analytics & AI\nBachelor of Technology, Electronics & Communications Engineering RNSIT, Bangalore — GPA: 3.7/4.0 (May 2023)"
+  },
+  {
+    "objectID": "resume.html#experience",
+    "href": "resume.html#experience",
+    "title": "My Resume",
+    "section": "Experience",
+    "text": "Experience\nMarket Research Analyst — SunBreak Feb 2025 – Present - Conducted data-driven market analysis on solar load shifting adoption using TAM/SAM/SOM modeling - Performed customer segmentation to inform go-to-market strategy and pricing decisions\nServiceNow Business Analyst — Ralph Lauren Dec 2023 – Jul 2025 - Automated workflows using ServiceNow, improving operational efficiency by 20% - Built dashboards to track KPIs (ticket volume, resolution time, SLA compliance) - Improved resolution time by 25% while maintaining 95%+ SLA adherence - Collaborated cross-functionally to translate business needs into technical solutions"
+  },
+  {
+    "objectID": "resume.html#skills",
+    "href": "resume.html#skills",
+    "title": "My Resume",
+    "section": "Skills",
+    "text": "Skills\nProgramming & Tools - SQL (joins, window functions, CTEs) - Python (Pandas, NumPy, Scikit-learn) - Tableau, Docker, AWS (S3, EC2), GitHub\nAnalytics & Business - Data Storytelling, Dashboarding, KPI Tracking - Market Analysis, Segmentation, A/B Testing - Predictive Modeling, Regression, Classification - ETL, EDA, Statistical Analysis"
+  },
+  {
+    "objectID": "resume.html#projects",
+    "href": "resume.html#projects",
+    "title": "My Resume",
+    "section": "Projects",
+    "text": "Projects\nTelecom Customer Churn & CLV Optimization | Python - Built churn models on 1M+ records and designed top-decile risk targeting strategy - Identified retention actions generating $1M+ projected long-term profit\nAd Campaign Uplift & Propensity Modeling | Python - Modeled customer response using experimental data - Projected ~$51K incremental profit through optimized targeting\nMarketing Analytics & Predictive Modeling (Intuit QuickBooks Upgrade) | Python - Built logistic regression and neural network models on 75K customers - Scaled predictions to 800K+ customers to estimate lift and optimize campaign targeting\nUser Behavior & Churn Dashboard | Tableau - Built dashboard for user engagement and churn insights - Delivered recommendations to improve retention\nETL & SQL Data Integration in Snowflake | SQL - Built ETL pipelines integrating 40+ datasets - Enabled analysis of supplier performance and transaction trends —"
+  },
+  {
+    "objectID": "resume.html#leadership",
+    "href": "resume.html#leadership",
+    "title": "My Resume",
+    "section": "Leadership",
+    "text": "Leadership\nDirector — Rady Data Analytics Club (Marketing & Communications) Oct 2025 – Present - Organized and promoted workshops using data-driven marketing strategies - Increased engagement through content optimization and feedback analysis\nVP — Cultural Activity Team (Marketing) Aug 2020 – May 2023 - Led marketing for large-scale events (5,000+ attendees) - Used data insights to refine campaigns and improve engagement by 30%"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "My Projects",
+    "section": "",
+    "text": "A/B Testing a Call to Action\n\n\n\n\n\n\nNamratha\n\n\nApr 15, 2026\n\n\n\n\n\n\n\n\n\n\n\nAnalysis of Cars\n\n\n\n\n\n\nNamratha K\n\n\nMar 4, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  }
+]
