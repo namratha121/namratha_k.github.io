@@ -1,0 +1,99 @@
+---
+title: "My Resume"
+format: html
+---
+
+{{< pdf files/Namratha_K_Resume.docx (3).pdf width=100% height=800 >}}
+
+# Namratha Kothapalli
+
+📍 San Diego, CA
+📧 nkothapalli@ucsd.edu
+🔗 [LinkedIn](https://www.linkedin.com/in/namratha202/) | [GitHub](https://github.com/namratha121)
+
+---
+
+## Summary
+
+Business Analytics graduate student skilled in SQL, Python, and Tableau, with experience in data analysis and predictive modeling. Interested in marketing analytics, business analytics, and data analytics roles.
+
+---
+
+## Education
+
+**Master of Science, Business Analytics**
+University of California, San Diego — *GPA: 3.8/4.0* (Expected Dec 2026)
+Relevant Coursework: SQL, Python, Gen AI, Marketing Analytics, Consumer Analytics & AI
+
+**Bachelor of Technology, Electronics & Communications Engineering**
+RNSIT, Bangalore — *GPA: 3.7/4.0* (May 2023)
+
+---
+
+## Experience
+
+**Market Research Analyst — SunBreak**
+Feb 2025 – Present
+- Conducted data-driven market analysis on solar load shifting adoption using TAM/SAM/SOM modeling
+- Performed customer segmentation to inform go-to-market strategy and pricing decisions
+
+**ServiceNow Business Analyst — Ralph Lauren**
+Dec 2023 – Jul 2025
+- Automated workflows using ServiceNow, improving operational efficiency by 20%
+- Built dashboards to track KPIs (ticket volume, resolution time, SLA compliance)
+- Improved resolution time by 25% while maintaining 95%+ SLA adherence
+- Collaborated cross-functionally to translate business needs into technical solutions
+
+---
+
+## Skills
+
+**Programming & Tools**
+- SQL (joins, window functions, CTEs)
+- Python (Pandas, NumPy, Scikit-learn)
+- Tableau, Docker, AWS (S3, EC2), GitHub
+
+**Analytics & Business**
+- Data Storytelling, Dashboarding, KPI Tracking
+- Market Analysis, Segmentation, A/B Testing
+- Predictive Modeling, Regression, Classification
+- ETL, EDA, Statistical Analysis
+
+---
+
+## Projects
+
+**Telecom Customer Churn & CLV Optimization | Python**
+- Built churn models on 1M+ records and designed top-decile risk targeting strategy
+- Identified retention actions generating $1M+ projected long-term profit
+
+**Ad Campaign Uplift & Propensity Modeling | Python**
+- Modeled customer response using experimental data
+- Projected ~$51K incremental profit through optimized targeting
+
+**Marketing Analytics & Predictive Modeling (Intuit QuickBooks Upgrade) | Python**
+- Built logistic regression and neural network models on 75K customers
+- Scaled predictions to 800K+ customers to estimate lift and optimize campaign targeting
+
+**User Behavior & Churn Dashboard | Tableau**
+- Built dashboard for user engagement and churn insights
+- Delivered recommendations to improve retention
+
+**ETL & SQL Data Integration in Snowflake | SQL**
+- Built ETL pipelines integrating 40+ datasets
+- Enabled analysis of supplier performance and transaction trends
+---
+
+## Leadership
+
+**Director — Rady Data Analytics Club (Marketing & Communications)**
+Oct 2025 – Present
+- Organized and promoted workshops using data-driven marketing strategies
+- Increased engagement through content optimization and feedback analysis
+
+**VP — Cultural Activity Team (Marketing)**
+Aug 2020 – May 2023
+- Led marketing for large-scale events (5,000+ attendees)
+- Used data insights to refine campaigns and improve engagement by 30%
+
+---

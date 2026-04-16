@@ -1,0 +1,30 @@
+---
+title: "Analysis of Cars"
+author: Namratha K
+date: "March 4, 2026"
+---
+
+## Sub-Header
+Here is a plot:
+
+```{python}
+#| message: false
+#| echo: false
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+##load dataset
+
+df = sns.load_dataset("mpg").dropna()
+
+##scatter plot
+
+sns.scatterplot(x="mpg", y="displacement", data=df)
+plt.show()
+```
+
+
+## Header
+Let's investigate the relationship between fuel efficiency (`mpg`) and engine displacement (`disp`) from the `mtcars` dataset. Those variables have a correlation of `{python} round(df["mpg"].corr(df["displacement"]), 2)`.

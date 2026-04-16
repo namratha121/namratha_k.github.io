@@ -1,0 +1,13 @@
+---
+title: "Namratha K"
+image: "files/profile_pic_3.jpg"
+about:
+  template: jolla
+  links:
+    - icon: envelope
+      href: mailto:your_email@address.com
+    - icon: linkedin
+      href: https://www.linkedin.com/in/namratha202
+---
+
+Welcome to my website!
