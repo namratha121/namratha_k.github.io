@@ -3,6 +3,7 @@ title: "A/B Testing a Call to Action"
 subtitle: "Simulating Key Ideas from Classical Frequentist Statistics"
 author: "Namratha"
 date: today
+jupyter : python3
 format:
   html:
     toc: true
