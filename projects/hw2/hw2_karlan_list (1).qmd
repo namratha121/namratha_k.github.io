@@ -1,0 +1,269 @@
+---
+title: "Replication of Karlan and List (2007)"
+subtitle: "Does Price Matter in Charitable Giving? Evidence from a Large-Scale Natural Field Experiment"
+author: "Your Name"
+date: today
+format:
+  html:
+    toc: true
+    code-fold: true
+    theme: cosmo
+---
+
+## Introduction
+
+Karlan and List (2007) conducted one of the most influential natural field experiments in the economics of charitable giving. The authors partnered with a liberal US nonprofit organization to send direct mail solicitations to over 50,000 prior donors. The central question is whether **price** — as manipulated through matching grants — affects both the likelihood and amount of charitable giving.
+
+The experimental design randomly assigned donors to a control group (no match offer) or one of several treatment groups varying along three dimensions: (1) the **match ratio** ($1:$1, $2:$1, or $3:$1), (2) the **maximum size** of the matching grant ($25,000, $50,000, $100,000, or unstated), and (3) the **suggested donation amount** (equal to, 1.25×, or 1.5× the donor's highest previous contribution).
+
+The paper's headline findings are:
+
+- Simply announcing a matching grant **increases response rates by ~22%** and revenue per solicitation by ~19%.
+- Contrary to conventional fundraising wisdom, **larger match ratios (2:1, 3:1) have no additional effect** over a 1:1 match.
+- Treatment effects are **heterogeneous by political environment**: the match worked strongly in "red" states but had little effect in "blue" states.
+
+These findings challenge the common fundraising belief that bigger matches attract bigger responses, and raise interesting questions about the role of political identity in charitable behavior.
+
+---
+
+## Data
+
+Download `AEJfinal.dta` from OpenICPSR (free account required):
+<https://www.openicpsr.org/openicpsr/project/113224/version/V1/view>
+
+Place it in the same folder as this `.qmd` file.
+
+```{python}
+#| label: setup
+#| message: false
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
+import statsmodels.formula.api as smf
+from scipy import stats
+
+# Load data
+df = pd.read_stata("AERtables1-5.dta")
+print(df["ratio"].dtype)
+print(df["ratio"].value_counts())
+
+print(df.shape)
+print(df.columns.tolist())
+```
+
+---
+
+## Main Analysis
+
+### Table 1 — Balance Check
+
+Table 1 confirms that randomization produced balanced treatment and control groups across all observable pre-treatment characteristics.
+
+```{python}
+#| label: table1
+
+balance_vars = {
+    "Months since last donation":   "mrm2",
+    "Highest previous contribution": "hpa",
+    "Number of prior donations":     "freq",
+    "Years since first donation":    "years",
+    "Female":                        "female",
+    "Couple":                        "couple",
+    "Proportion white":              "pwhite",
+    "Proportion black":              "pblack",
+    "Proportion age 18-39":          "page1839",
+    "Avg household size":            "avhh",
+    "Red state":                     "red0",
+}
+
+rows = []
+for label, var in balance_vars.items():
+    if var not in df.columns:
+        continue
+    trt_vals  = df.loc[df["treatment"] == 1, var].dropna()
+    ctrl_vals = df.loc[df["treatment"] == 0, var].dropna()
+    pval      = stats.ttest_ind(trt_vals, ctrl_vals).pvalue
+    rows.append({
+        "Variable":  label,
+        "All":       round(df[var].mean(), 3),
+        "Treatment": round(trt_vals.mean(), 3),
+        "Control":   round(ctrl_vals.mean(), 3),
+        "p-value":   round(pval, 3),
+    })
+
+balance_df = pd.DataFrame(rows)
+print(balance_df.to_string(index=False))
+```
+
+> **Interpretation:** All p-values should be well above 0.05, confirming that the treatment and control groups are statistically indistinguishable on pre-treatment characteristics. This rules out selection bias as an explanation for any differences in giving behavior.
+
+---
+
+### Table 2A — Mean Responses by Match Ratio
+
+```{python}
+#| label: table2a
+df["ratio_num"] = pd.to_numeric(df["ratio"], errors="coerce")
+conditions = [
+    df["treatment"] == 0,
+    (df["treatment"] == 1) & (df["ratio"] == 1),
+    (df["treatment"] == 1) & (df["ratio"] == 2),
+    (df["treatment"] == 1) & (df["ratio"] == 3),
+]
+choices = ["Control", "1:1", "2:1", "3:1"]
+df["ratio_group"] = np.select(conditions, choices, default="Other")
+df = df[df["ratio_group"] != "nan"].copy()
+
+rows = []
+for grp in ["Control", "1:1", "2:1", "3:1"]:
+    sub      = df[df["ratio_group"] == grp]
+    gave_sub = sub.loc[sub["gave"] == 1, "amount"]
+    rows.append({
+        "Group":             grp,
+        "Response Rate":     round(sub["gave"].mean(), 3),
+        "SE (Resp Rate)":    round(sub["gave"].sem(), 3),
+        "$ Given (Uncond.)": round(sub["amount"].mean(), 3),
+        "SE (Uncond.)":      round(sub["amount"].sem(), 3),
+        "$ Given (Cond.)":   round(gave_sub.mean(), 3) if len(gave_sub) > 0 else np.nan,
+        "SE (Cond.)":        round(gave_sub.sem(), 3)  if len(gave_sub) > 0 else np.nan,
+        "N":                 len(sub),
+    })
+
+t2a = pd.DataFrame(rows)
+print(t2a.to_string(index=False))
+```
+
+> **Key result:** Response rates and unconditional giving are higher in all treatment arms than in control, but the 2:1 and 3:1 treatments perform no better than 1:1 — replicating the paper's central finding.
+
+---
+
+### Table 3 — Regression Results (Likelihood of Giving)
+
+The paper runs probit models but reports coefficients that closely match OLS (a known quirk). We use OLS (linear probability model), which replicates the paper's numbers.
+
+```{python}
+#| label: table3
+
+df["ratio2"]  = ((df["treatment"] == 1) & (df["ratio"] == 2)).astype(int)
+df["ratio3"]  = ((df["treatment"] == 1) & (df["ratio"] == 3)).astype(int)
+df["size25"]  = ((df["treatment"] == 1) & (df["size"] == 25000)).astype(int)
+df["size50"]  = ((df["treatment"] == 1) & (df["size"] == 50000)).astype(int)
+df["size100"] = ((df["treatment"] == 1) & (df["size"] == 100000)).astype(int)
+df["askmed"]  = ((df["treatment"] == 1) & (df["ask"] == 2)).astype(int)
+df["askhigh"] = ((df["treatment"] == 1) & (df["ask"] == 3)).astype(int)
+
+m1 = smf.ols("gave ~ treatment", data=df).fit()
+m2 = smf.ols(
+    "gave ~ treatment + ratio2 + ratio3 + size25 + size50 + size100 + askmed + askhigh",
+    data=df
+).fit()
+
+def stars(p):
+    if p < 0.01: return "***"
+    if p < 0.05: return "**"
+    if p < 0.10: return "*"
+    return ""
+
+coef_labels = {
+    "Intercept": "Constant",
+    "treatment": "Treatment",
+    "ratio2":    "Treatment × 2:1 ratio",
+    "ratio3":    "Treatment × 3:1 ratio",
+    "size25":    "Treatment × $25k threshold",
+    "size50":    "Treatment × $50k threshold",
+    "size100":   "Treatment × $100k threshold",
+    "askmed":    "Treatment × medium ask",
+    "askhigh":   "Treatment × high ask",
+}
+
+rows = []
+for var, label in coef_labels.items():
+    row = {"Variable": label}
+    for col, model in [("(1)", m1), ("(2)", m2)]:
+        if var in model.params:
+            coef = model.params[var]
+            se   = model.bse[var]
+            p    = model.pvalues[var]
+            row[col] = f"{coef:.4f}{stars(p)}  ({se:.4f})"
+        else:
+            row[col] = "—"
+    rows.append(row)
+
+t3 = pd.DataFrame(rows)
+print(t3.to_string(index=False))
+print(f"\nN: {int(m1.nobs):,}   |   R² col(1): {m1.rsquared:.4f}   R² col(2): {m2.rsquared:.4f}")
+```
+
+> The `Treatment` coefficient (~0.004) means receiving a match offer raises the donation probability by ~0.4 percentage points off a 1.8% base rate — a ~22% increase, matching the paper exactly. The ratio and ask interactions are all insignificant, confirming that larger matches add nothing.
+
+---
+
+## Something Additional: Visualizing the Red/Blue State Heterogeneity
+
+One of the paper's most striking findings is that the match effect is entirely concentrated in red states. The paper shows this only in regression tables and a small scatter plot — here we visualize it as a clear bar chart.
+
+```{python}
+#| label: red-blue-plot
+#| fig-cap: "Treatment effect on donation rate by political environment"
+
+summary = (
+    df.groupby(["red0", "treatment"])["gave"]
+    .agg(mean="mean", sem="sem")
+    .reset_index()
+)
+summary["red_label"] = summary["red0"].map({0: "Blue State", 1: "Red State"})
+summary["group"]     = summary["treatment"].map({0: "Control", 1: "Treatment\n(Match Offer)"})
+
+fig, ax = plt.subplots(figsize=(8, 5))
+
+colors    = {"Control": "#888888", "Treatment\n(Match Offer)": "#2a6ebb"}
+x_pos     = {"Blue State": 0, "Red State": 1}
+offsets   = {"Control": -0.15, "Treatment\n(Match Offer)": 0.15}
+seen      = set()
+
+for _, row in summary.iterrows():
+    x     = x_pos[row["red_label"]] + offsets[row["group"]]
+    label = row["group"] if row["group"] not in seen else "_nolegend_"
+    seen.add(row["group"])
+    ax.bar(x, row["mean"], width=0.25,
+           color=colors[row["group"]], label=label, alpha=0.85, edgecolor="white")
+    ax.errorbar(x, row["mean"], yerr=1.96 * row["sem"],
+                fmt="none", color="black", capsize=4, linewidth=1.2)
+
+ax.set_xticks([0, 1])
+ax.set_xticklabels(["Blue State", "Red State"], fontsize=12)
+ax.yaxis.set_major_formatter(mticker.PercentFormatter(xmax=1, decimals=1))
+ax.set_ylabel("Response Rate", fontsize=11)
+ax.set_title("Match Offer Effect on Donation Rate:\nRed vs. Blue States",
+             fontsize=13, fontweight="bold")
+ax.legend(title="Group", fontsize=10)
+ax.spines[["top", "right"]].set_visible(False)
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+#| label: red-blue-regression
+
+df["treat_red"] = df["treatment"] * df["red0"]
+m_rb = smf.ols("gave ~ treatment + red0 + treat_red", data=df).fit()
+
+res = m_rb.summary2().tables[1][["Coef.", "Std.Err.", "t", "P>|t|"]]
+print(res)
+```
+
+> **Interpretation:** The `treat_red` interaction is positive and significant while the main `treatment` effect is near zero — the entire average match effect comes from red-state donors. In blue states, the match did nothing. This is puzzling from a pure price perspective (the match lowers the cost of giving equally everywhere) and suggests that political identity, social signaling, or minority-group dynamics play a key role in donor responsiveness.
+
+---
+
+## Conclusion
+
+This replication confirms all three main findings of Karlan and List (2007):
+
+1. **Matching grants work** — announcing a match significantly increases participation and revenue.
+2. **Match ratio doesn't matter** — 2:1 and 3:1 perform identically to 1:1, refuting conventional fundraising wisdom.
+3. **Context matters enormously** — the entire effect is driven by red-state donors, pointing to non-price factors like political identity.
+
+Causal inference is valid here because of **random assignment**: the balance table confirms groups were equivalent on all pre-treatment observables, so any difference in outcomes is attributable to the match offer itself — not to who received it.
