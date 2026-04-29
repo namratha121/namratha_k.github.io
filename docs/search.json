@@ -179,7 +179,7 @@
     "href": "projects/project1/index.html",
     "title": "Analysis of Cars",
     "section": "",
-    "text": "Here is a plot:"
+    "text": "Let’s investigate the relationship between fuel efficiency (mpg) and engine displacement in the Auto MPG dataset."
   },
   {
     "objectID": "projects/project1/index.html#sub-header",
@@ -201,5 +201,19 @@
     "title": "Namratha K",
     "section": "",
     "text": "Welcome to my website!"
+  },
+  {
+    "objectID": "projects/project1/index.html#overview",
+    "href": "projects/project1/index.html#overview",
+    "title": "Analysis of Cars",
+    "section": "",
+    "text": "Let’s investigate the relationship between fuel efficiency (mpg) and engine displacement in the Auto MPG dataset."
+  },
+  {
+    "objectID": "projects/project1/index.html#analysis",
+    "href": "projects/project1/index.html#analysis",
+    "title": "Analysis of Cars",
+    "section": "Analysis",
+    "text": "Analysis\nThose variables have a correlation of np.float64(-0.81)."
   }
 ]
