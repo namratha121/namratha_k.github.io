@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Projects – marketing analytics</title>
+<title>file-map – marketing analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,67 +68,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -140,9 +80,9 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">marketing analytics</span>
     </a>
   </div>
@@ -153,15 +93,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resume.html"> 
+    <a class="nav-link" href="../../resume.html"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">projects</span></a>
   </li>  
 </ul>
@@ -175,198 +115,333 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#file-map-to-change-x-edit-y" id="toc-file-map-to-change-x-edit-y" class="nav-link active" data-scroll-target="#file-map-to-change-x-edit-y">File Map — “To change X, edit Y”</a>
+  <ul class="collapse">
+  <li><a href="#global-site-wide" id="toc-global-site-wide" class="nav-link" data-scroll-target="#global-site-wide">Global / site-wide</a></li>
+  <li><a href="#homepage-index.qmd" id="toc-homepage-index.qmd" class="nav-link" data-scroll-target="#homepage-index.qmd">Homepage — index.qmd</a></li>
+  <li><a href="#projects-index-case-studies" id="toc-projects-index-case-studies" class="nav-link" data-scroll-target="#projects-index-case-studies">Projects — index &amp; case studies</a></li>
+  <li><a href="#deep-dives-writing-blog.qmd" id="toc-deep-dives-writing-blog.qmd" class="nav-link" data-scroll-target="#deep-dives-writing-blog.qmd">Deep Dives / Writing — blog.qmd</a></li>
+  <li><a href="#about-about.qmd" id="toc-about-about.qmd" class="nav-link" data-scroll-target="#about-about.qmd">About — about.qmd</a></li>
+  <li><a href="#resume-resume.qmd" id="toc-resume-resume.qmd" class="nav-link" data-scroll-target="#resume-resume.qmd">Resume — resume.qmd</a></li>
+  <li><a href="#build-deploy" id="toc-build-deploy" class="nav-link" data-scroll-target="#build-deploy">Build &amp; deploy</a></li>
+  <li><a href="#never-edit-files" id="toc-never-edit-files" class="nav-link" data-scroll-target="#never-edit-files">Never-edit files</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">My Projects</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
+<section id="file-map-to-change-x-edit-y" class="level1">
+<h1>File Map — “To change X, edit Y”</h1>
+<p>The fastest lookup in the docs. If you know what you want to change, this table tells you exactly which file to open. No prose.</p>
+<p>For the reasoning behind these file choices, see <a href="../../portfolio_website/docs-meta/decisions.html">decisions.md</a> and <a href="../../portfolio_website/docs-meta/build-deploy.html">build-deploy.md</a>.</p>
+<hr>
+<section id="global-site-wide" class="level2">
+<h2 class="anchored" data-anchor-id="global-site-wide">Global / site-wide</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>To change…</th>
+<th>Edit…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Site colors (entire palette)</td>
+<td><a href="../styles/custom.css">styles/custom.css</a> → <code>:root</code> + <code>html.dark</code> blocks at the top</td>
+</tr>
+<tr class="even">
+<td>Accent color / gradient</td>
+<td><a href="../styles/custom.css">styles/custom.css</a> → <code>--accent</code>, <code>--accent-alt</code>, <code>--accent-gradient</code></td>
+</tr>
+<tr class="odd">
+<td>Fonts (swap family)</td>
+<td><a href="../_partials/head-extras.html">_partials/head-extras.html</a> (Google Fonts URL) + <code>font-family</code> rules in <a href="../styles/custom.css">styles/custom.css</a></td>
+</tr>
+<tr class="even">
+<td>Favicon</td>
+<td><a href="../assets/favicon.svg">assets/favicon.svg</a></td>
+</tr>
+<tr class="odd">
+<td>Dark-mode default (initial theme)</td>
+<td><a href="../_partials/head-extras.html">_partials/head-extras.html</a> — inline <code>&lt;script&gt;</code> adds <code>html.dark</code> before paint</td>
+</tr>
+<tr class="even">
+<td>Theme toggle behavior</td>
+<td><a href="../js/main.js">js/main.js</a> → section <code>1. Theme Toggle</code></td>
+</tr>
+<tr class="odd">
+<td>Navbar links (site-wide)</td>
+<td>Every <code>*.qmd</code> file’s navbar block (copy-paste; all files must stay in sync)</td>
+</tr>
+<tr class="even">
+<td>Nav active-link detection</td>
+<td><a href="../js/main.js">js/main.js</a> → section <code>4. Active Nav Link Detection</code></td>
+</tr>
+<tr class="odd">
+<td>Responsive / mobile breakpoints</td>
+<td><a href="../styles/custom.css">styles/custom.css</a> → <code>@media (max-width: 768px)</code> block</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="homepage-index.qmd" class="level2">
+<h2 class="anchored" data-anchor-id="homepage-index.qmd">Homepage — <a href="../../portfolio_website/index.html">index.qmd</a></h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>To change…</th>
+<th>Edit…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hero name</td>
+<td><code>index.qmd</code> → <code>.hero-name</code> block</td>
+</tr>
+<tr class="even">
+<td>Typewriter role line</td>
+<td><a href="../js/main.js">js/main.js</a> → <code>TW_TEXT</code> constant</td>
+</tr>
+<tr class="odd">
+<td>Hero bio paragraphs</td>
+<td><code>index.qmd</code> → <code>.hero-bio</code> blocks</td>
+</tr>
+<tr class="even">
+<td>Availability badge text</td>
+<td><code>index.qmd</code> → <code>.badge-text</code> span</td>
+</tr>
+<tr class="odd">
+<td>Bento grid cells</td>
+<td><code>index.qmd</code> → <code>.bento</code> block (cells A–E)</td>
+</tr>
+<tr class="even">
+<td>Terminal bento content</td>
+<td><code>index.qmd</code> → <code>.terminal-cell</code> block</td>
+</tr>
+<tr class="odd">
+<td>“Let’s Talk” email</td>
+<td><a href="../js/main.js">js/main.js</a> → <code>email</code> constant in Copy Email section</td>
+</tr>
+<tr class="even">
+<td>Tools marquee text</td>
+<td><code>index.qmd</code> → <code>.marquee-track</code> (duplicate text twice for seamless loop)</td>
+</tr>
+<tr class="odd">
+<td>Featured projects (3 on homepage)</td>
+<td><a href="../projects.json">projects.json</a> — set <code>"featured": true</code> on 3 entries</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="projects-index-case-studies" class="level2">
+<h2 class="anchored" data-anchor-id="projects-index-case-studies">Projects — index &amp; case studies</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>To change…</th>
+<th>Edit…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Projects page banner</td>
+<td><a href="../../portfolio_website/projects.html">projects.qmd</a> → <code>.page-banner</code> block</td>
+</tr>
+<tr class="even">
+<td>Project card data (all cards)</td>
+<td><a href="../projects.json">projects.json</a> — single source of truth</td>
+</tr>
+<tr class="odd">
+<td>Category filter pills</td>
+<td><a href="../projects.json">projects.json</a> — pills generated from <code>"category"</code> fields automatically</td>
+</tr>
+<tr class="even">
+<td>Add a new case study</td>
+<td>1) Duplicate <a href="../../portfolio_website/projects/new-project-template.html">projects/new-project-template.qmd</a>, 2) Add entry to <a href="../projects.json">projects.json</a></td>
+</tr>
+<tr class="odd">
+<td>Case study shared navbar</td>
+<td><a href="../_partials/case-study-template.html">_partials/case-study-template.html</a> (uses <code>../</code> paths)</td>
+</tr>
+<tr class="even">
+<td>Card hover shadows / glow</td>
+<td><a href="../styles/custom.css">styles/custom.css</a> → <code>.p-card:hover</code> block</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="deep-dives-writing-blog.qmd" class="level2">
+<h2 class="anchored" data-anchor-id="deep-dives-writing-blog.qmd">Deep Dives / Writing — <a href="../../portfolio_website/blog.html">blog.qmd</a></h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>To change…</th>
+<th>Edit…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Blog page banner</td>
+<td><a href="../../portfolio_website/blog.html">blog.qmd</a> → <code>.page-banner</code> block</td>
+</tr>
+<tr class="even">
+<td>Blog card data (all posts)</td>
+<td><a href="../blog.json">blog.json</a> — single source of truth</td>
+</tr>
+<tr class="odd">
+<td>Featured-post badge</td>
+<td><a href="../blog.json">blog.json</a> — set <code>"featured": true</code></td>
+</tr>
+<tr class="even">
+<td>Category filters</td>
+<td><a href="../blog.json">blog.json</a> — pills generated from <code>"category"</code> fields</td>
+</tr>
+<tr class="odd">
+<td>Add a new post</td>
+<td>1) Duplicate <a href="../../portfolio_website/posts/splash-template.html">posts/splash-template.qmd</a> and <a href="../../portfolio_website/posts/post-template.html">posts/post-template.qmd</a>, 2) Add entry to <a href="../blog.json">blog.json</a> pointing <code>href</code> to the <code>-splash.html</code> file</td>
+</tr>
+<tr class="even">
+<td>Article body typography</td>
+<td><a href="../styles/custom.css">styles/custom.css</a> → <code>POST PAGE</code> block (<code>.post-body</code>, <code>.post-body p</code>, etc.)</td>
+</tr>
+<tr class="odd">
+<td>Splash page styling</td>
+<td><a href="../styles/custom.css">styles/custom.css</a> → <code>SPLASH PAGE</code> block</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="about-about.qmd" class="level2">
+<h2 class="anchored" data-anchor-id="about-about.qmd">About — <a href="../../portfolio_website/about.html">about.qmd</a></h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>To change…</th>
+<th>Edit…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>About photo</td>
+<td>Replace <a href="../assets/profile.jpg">assets/profile.jpg</a></td>
+</tr>
+<tr class="even">
+<td>About bio</td>
+<td><code>about.qmd</code> → <code>.about-bio</code> block</td>
+</tr>
+<tr class="odd">
+<td>Education entries</td>
+<td><code>about.qmd</code> → <code>.edu-item</code> blocks</td>
+</tr>
+<tr class="even">
+<td>Experience timeline</td>
+<td><code>about.qmd</code> → <code>.timeline-item</code> blocks</td>
+</tr>
+<tr class="odd">
+<td>Skills</td>
+<td><code>about.qmd</code> → <code>.skill-group</code> blocks</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="resume-resume.qmd" class="level2">
+<h2 class="anchored" data-anchor-id="resume-resume.qmd">Resume — <a href="../../portfolio_website/resume.html">resume.qmd</a></h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>To change…</th>
+<th>Edit…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Resume PDF</td>
+<td>Replace <a href="../assets/resume.pdf">assets/resume.pdf</a> — no other changes needed</td>
+</tr>
+<tr class="even">
+<td>Resume page copy (buttons, caption)</td>
+<td><a href="../../portfolio_website/resume.html">resume.qmd</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="build-deploy" class="level2">
+<h2 class="anchored" data-anchor-id="build-deploy">Build &amp; deploy</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>To change…</th>
+<th>Edit…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Render pipeline / pre-render hook</td>
+<td><a href="../sync-scripts.py">sync-scripts.py</a></td>
+</tr>
+<tr class="even">
+<td>Output directory</td>
+<td><a href="../_quarto.yml">_quarto.yml</a> → <code>output-dir</code></td>
+</tr>
+<tr class="odd">
+<td>CSS/JS includes</td>
+<td><a href="../_quarto.yml">_quarto.yml</a> → <code>format.html.css</code>, <code>include-in-header</code>, <code>include-after-body</code></td>
+</tr>
+<tr class="even">
+<td>Which <code>.qmd</code> files render</td>
+<td><a href="../_quarto.yml">_quarto.yml</a> → <code>project.render</code> globs</td>
+</tr>
+<tr class="odd">
+<td>Static resources copied to <code>/docs</code></td>
+<td><a href="../_quarto.yml">_quarto.yml</a> → <code>project.resources</code></td>
+</tr>
+<tr class="even">
+<td>What gets ignored from git</td>
+<td><a href="../.gitignore">.gitignore</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="never-edit-files" class="level2">
+<h2 class="anchored" data-anchor-id="never-edit-files">Never-edit files</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="../_partials/scripts.html">_partials/scripts.html</a></td>
+<td>Auto-generated by <code>sync-scripts.py</code> on every render. Edit <a href="../js/main.js">js/main.js</a> instead.</td>
+</tr>
+<tr class="even">
+<td><a href="../docs/">docs/</a></td>
+<td>Build output. Regenerated by <code>quarto render</code>. Never hand-edit.</td>
+</tr>
+<tr class="odd">
+<td><a href="../.quarto/">.quarto/</a></td>
+<td>Quarto’s cache. Safe to delete; will regenerate.</td>
+</tr>
+</tbody>
+</table>
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1776908149983" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2923">
-<a href="./projects/hw1/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw1/index_files/figure-html/cell-5-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-A/B Testing a Call to Action
-</h5>
-<div class="card-text listing-description delink">
-Every website with a newsletter faces the same quiet dilemma: what do you actually <em>say</em> to get someone to sign up? The words you choose — your “call to action,” or CTA — can…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1772611200000" data-listing-file-modified-sort="1776300244810" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
-<a href="./projects/project1/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/project1/index_files/figure-html/cell-2-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Analysis of Cars
-</h5>
-<div class="card-text listing-description delink">
-Here is a plot:
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha K
-</div>
-<div class="listing-date">
-Mar 4, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="2" data-listing-word-count-sort="387">
-<a href="./portfolio_website/projects/new-project-template.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Overview
-</h5>
-<div class="card-text listing-description delink">
+</section>
+</section>
 
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1779083201534" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2633">
-<a href="./projects/hw3/hw3_blueprinty.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw3/hw3_blueprinty_files/figure-html/cell-3-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Poisson Regression and Maximum Likelihood Estimation
-</h5>
-<div class="card-text listing-description delink">
-Blueprinty is a small software company that sells tools for engineering firms developing blueprint documentation specifically for US patent applications. Their marketing…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha Kothapalli
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1776912774019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1765">
-<a href="./projects/hw2/hw2.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw2/hw2_files/figure-html/red-blue-plot-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Replication of Karlan and List (2007)
-</h5>
-<div class="card-text listing-description delink">
-Karlan and List (2007) conducted one of the most influential natural field experiments in the economics of charitable giving. The authors partnered with a liberal US…<strong></strong>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha K
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="8" data-listing-word-count-sort="1581">
-<a href="./portfolio_website/projects/traway.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Traway Operations Analytics — Yash Tiwari
-</h5>
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1775547376372">
-<a href="./projects/project2/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="5" data-listing-word-count-sort="806">
-<a href="./portfolio_website/projects/traway-bridge.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

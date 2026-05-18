@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Projects – marketing analytics</title>
+<title>claude – marketing analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,67 +68,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -140,9 +80,9 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">marketing analytics</span>
     </a>
   </div>
@@ -153,15 +93,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resume.html"> 
+    <a class="nav-link" href="../resume.html"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">projects</span></a>
   </li>  
 </ul>
@@ -175,198 +115,208 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#claude.md" id="toc-claude.md" class="nav-link active" data-scroll-target="#claude.md">CLAUDE.md</a>
+  <ul class="collapse">
+  <li><a href="#what-this-project-is" id="toc-what-this-project-is" class="nav-link" data-scroll-target="#what-this-project-is">What this project is</a></li>
+  <li><a href="#tech-stack-at-a-glance" id="toc-tech-stack-at-a-glance" class="nav-link" data-scroll-target="#tech-stack-at-a-glance">Tech stack at a glance</a></li>
+  <li><a href="#directory-map-high-level" id="toc-directory-map-high-level" class="nav-link" data-scroll-target="#directory-map-high-level">Directory map (high level)</a></li>
+  <li><a href="#load-order-guide-which-doc-to-open-for-which-task" id="toc-load-order-guide-which-doc-to-open-for-which-task" class="nav-link" data-scroll-target="#load-order-guide-which-doc-to-open-for-which-task">Load-order guide — which doc to open for which task</a></li>
+  <li><a href="#update-protocol-keep-these-docs-honest" id="toc-update-protocol-keep-these-docs-honest" class="nav-link" data-scroll-target="#update-protocol-keep-these-docs-honest">Update protocol — keep these docs honest</a></li>
+  <li><a href="#guardrails-things-to-never-do" id="toc-guardrails-things-to-never-do" class="nav-link" data-scroll-target="#guardrails-things-to-never-do">Guardrails — things to never do</a></li>
+  <li><a href="#common-workflows-fastest-paths" id="toc-common-workflows-fastest-paths" class="nav-link" data-scroll-target="#common-workflows-fastest-paths">Common workflows (fastest paths)</a></li>
+  <li><a href="#one-more-thing-build-before-you-commit" id="toc-one-more-thing-build-before-you-commit" class="nav-link" data-scroll-target="#one-more-thing-build-before-you-commit">One more thing — build before you commit</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">My Projects</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
+<section id="claude.md" class="level1">
+<h1>CLAUDE.md</h1>
+<p><strong>Entry point for any LLM working on this site.</strong> Read this file first. Load supporting docs in <code>docs-meta/</code> only as the task requires.</p>
+<hr>
+<section id="what-this-project-is" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-project-is">What this project is</h2>
+<p>Yash Tiwari’s personal portfolio site — a custom-designed Quarto static site showcasing data/analytics/ML case studies and long-form “Deep Dive” articles on data science, decision-making, and applied AI. Dark-first dual theme, zero framework dependencies, deployed to GitHub Pages from the <code>/docs</code> folder. Hand-authored design system (no Bootstrap, no Quarto defaults). Currently ships 3 project case studies and 2 published articles, with templates and a JSON-driven content model ready for more.</p>
+<hr>
+</section>
+<section id="tech-stack-at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="tech-stack-at-a-glance">Tech stack at a glance</h2>
+<ul>
+<li><strong>Quarto</strong> static site generator (<code>theme: none</code>, <code>minimal: true</code> — strips Bootstrap and Quarto scaffolding)</li>
+<li><strong>Plain CSS</strong> with custom properties — one file: <a href="styles/custom.css">styles/custom.css</a></li>
+<li><strong>Vanilla JS</strong> — one file: <a href="js/main.js">js/main.js</a>. No framework, no bundler.</li>
+<li><strong>Google Fonts</strong> — Geist, Instrument Serif, JetBrains Mono</li>
+<li><strong>GitHub Pages</strong> on <code>main</code> branch, <code>/docs</code> folder. No CI/CD. Manual <code>quarto render</code> + <code>git push</code>.</li>
+<li>Pre-render hook: <a href="sync-scripts.py">sync-scripts.py</a> auto-generates <code>_partials/scripts.html</code> from <a href="js/main.js">js/main.js</a></li>
+</ul>
+<hr>
+</section>
+<section id="directory-map-high-level" class="level2">
+<h2 class="anchored" data-anchor-id="directory-map-high-level">Directory map (high level)</h2>
+<pre><code>Portfolio_website/
+├── CLAUDE.md                 ← You are here. Entry point.
+├── docs-meta/                ← LLM-facing supporting docs (this is doc, not build output)
+│   ├── design-system.md      ← Colors, typography, components, theming
+│   ├── content-model.md      ← JSON data, page types, splash pattern, how to add content
+│   ├── build-deploy.md       ← Render pipeline, _quarto.yml, GH Pages
+│   ├── file-map.md           ← "To change X, edit Y" lookup table
+│   ├── decisions.md          ← Append-only decision log (1-line index + full new entries)
+│   └── _archive/             ← Original docs preserved (architecture.md, decisions.md, codex_design.md)
+│
+├── _quarto.yml               ← Site config
+├── sync-scripts.py           ← Pre-render hook
+├── _partials/
+│   ├── head-extras.html      ← &lt;head&gt;: fonts + dark-mode init
+│   ├── scripts.html          ← AUTO-GENERATED — never edit
+│   └── case-study-template.html ← Shared navbar for case studies
+│
+├── styles/custom.css         ← All styling
+├── js/main.js                ← All behavior (source of truth)
+│
+├── index.qmd                 ← Homepage
+├── projects.qmd              ← Projects index
+├── blog.qmd                  ← Deep Dives index
+├── about.qmd                 ← About
+├── resume.qmd                ← Resume
+│
+├── projects.json             ← Project card data (single source of truth)
+├── blog.json                 ← Blog card data (single source of truth)
+│
+├── projects/                 ← Individual case studies
+│   ├── new-project-template.qmd
+│   └── &lt;slug&gt;.qmd
+│
+├── posts/                    ← Deep-dive articles + splashes
+│   ├── post-template.qmd
+│   ├── splash-template.qmd
+│   ├── &lt;slug&gt;-splash.qmd
+│   └── &lt;slug&gt;.qmd
+│
+├── assets/                   ← resume.pdf, profile.jpg, favicon.svg
+├── docs/                     ← BUILD OUTPUT. GH Pages reads this. Never hand-edit.
+└── others/                   ← Excluded from render (scratch)</code></pre>
+<p>For a complete “to change X, edit Y” table, see <a href="../portfolio_website/docs-meta/file-map.html">docs-meta/file-map.md</a>.</p>
+<hr>
+</section>
+<section id="load-order-guide-which-doc-to-open-for-which-task" class="level2">
+<h2 class="anchored" data-anchor-id="load-order-guide-which-doc-to-open-for-which-task">Load-order guide — which doc to open for which task</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>If the task involves…</th>
+<th>Load this doc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fast lookup of which file controls what</td>
+<td><a href="../portfolio_website/docs-meta/file-map.html">docs-meta/file-map.md</a></td>
+</tr>
+<tr class="even">
+<td>Colors, typography, components, theming, cursor effects</td>
+<td><a href="../portfolio_website/docs-meta/design-system.html">docs-meta/design-system.md</a></td>
+</tr>
+<tr class="odd">
+<td>Adding a post, project, or page — or understanding the JSON schema</td>
+<td><a href="../portfolio_website/docs-meta/content-model.html">docs-meta/content-model.md</a></td>
+</tr>
+<tr class="even">
+<td><code>_quarto.yml</code>, render pipeline, <code>sync-scripts.py</code>, deploy, gotchas</td>
+<td><a href="../portfolio_website/docs-meta/build-deploy.html">docs-meta/build-deploy.md</a></td>
+</tr>
+<tr class="odd">
+<td>“Why was X done this way?” — past tradeoffs</td>
+<td><a href="../portfolio_website/docs-meta/decisions.html">docs-meta/decisions.md</a> (index) or <a href="docs-meta/_archive/decisions.md">docs-meta/_archive/decisions.md</a> (full prose, entries 1–45)</td>
+</tr>
+</tbody>
+</table>
+<p>For most tasks, CLAUDE.md + one supporting doc is enough. Don’t load all four unless you’re doing a site-wide refactor.</p>
+<hr>
+</section>
+<section id="update-protocol-keep-these-docs-honest" class="level2">
+<h2 class="anchored" data-anchor-id="update-protocol-keep-these-docs-honest">Update protocol — keep these docs honest</h2>
+<p><strong>After you make a change, update the relevant doc in the same commit.</strong> If you skip this, the docs drift and the next LLM to work on this site has to rediscover everything.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>If you changed…</th>
+<th>Update…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CSS variables, color tokens, typography, or added a new component class</td>
+<td><a href="../portfolio_website/docs-meta/design-system.html">docs-meta/design-system.md</a></td>
+</tr>
+<tr class="even">
+<td>JSON schema, page types, splash pattern, or how to add content</td>
+<td><a href="../portfolio_website/docs-meta/content-model.html">docs-meta/content-model.md</a></td>
+</tr>
+<tr class="odd">
+<td><a href="_quarto.yml">_quarto.yml</a>, <a href="sync-scripts.py">sync-scripts.py</a>, render pipeline, or deploy flow</td>
+<td><a href="../portfolio_website/docs-meta/build-deploy.html">docs-meta/build-deploy.md</a></td>
+</tr>
+<tr class="even">
+<td>Which file controls what (new or moved file)</td>
+<td><a href="../portfolio_website/docs-meta/file-map.html">docs-meta/file-map.md</a> + this file’s directory map</td>
+</tr>
+<tr class="odd">
+<td>Made a non-obvious tradeoff (rejected an alternative, went against the obvious choice)</td>
+<td>Append a new entry to <a href="../portfolio_website/docs-meta/decisions.html">docs-meta/decisions.md</a></td>
+</tr>
+<tr class="even">
+<td>Added a major new content section or page type</td>
+<td><a href="../portfolio_website/docs-meta/content-model.html">docs-meta/content-model.md</a> + this file’s “What this project is” and directory map</td>
+</tr>
+</tbody>
+</table>
+<p><strong>One-off tweaks (a padding adjustment, a copy change, a new card in JSON) do NOT require a doc update.</strong> Docs describe structure, invariants, and reasoning — not every line of content. Update docs when the <em>shape</em> of the site changes.</p>
+<hr>
+</section>
+<section id="guardrails-things-to-never-do" class="level2">
+<h2 class="anchored" data-anchor-id="guardrails-things-to-never-do">Guardrails — things to never do</h2>
+<ul>
+<li><strong>Never edit <a href="_partials/scripts.html">_partials/scripts.html</a>.</strong> It’s auto-generated by <a href="sync-scripts.py">sync-scripts.py</a> on every render, and is gitignored. Edit <a href="js/main.js">js/main.js</a> instead; <code>quarto render</code> re-syncs.</li>
+<li><strong>Never edit files inside <a href="docs/">docs/</a>.</strong> It’s the build output; changes will be overwritten.</li>
+<li><strong>Never hardcode project or blog cards in HTML.</strong> They’re JSON-driven (<a href="projects.json">projects.json</a>, <a href="blog.json">blog.json</a>). Hardcoding breaks featured/filter contracts and creates two-file drift.</li>
+<li><strong>Never add Bootstrap or Quarto default styles back.</strong> <code>theme: none</code> + <code>minimal: true</code> is deliberate. The design system assumes nothing else is in the cascade.</li>
+<li><strong>Never commit without re-rendering.</strong> <code>quarto render</code> must run before <code>git push</code> if any <code>.qmd</code>, CSS, JS, JSON, or config changed. GitHub Pages serves <code>/docs</code> as-is.</li>
+<li><strong>Never push the <code>others/</code> folder’s contents as site content.</strong> It’s excluded from render for a reason (scratch/homework).</li>
+</ul>
+<hr>
+</section>
+<section id="common-workflows-fastest-paths" class="level2">
+<h2 class="anchored" data-anchor-id="common-workflows-fastest-paths">Common workflows (fastest paths)</h2>
+<ul>
+<li><strong>Change site colors:</strong> Edit <a href="styles/custom.css">styles/custom.css</a> <code>:root</code> and <code>html.dark</code> blocks at the top. Nothing else.</li>
+<li><strong>Add a project:</strong> Duplicate <a href="../portfolio_website/projects/new-project-template.html">projects/new-project-template.qmd</a>, add entry to <a href="projects.json">projects.json</a>. See <a href="../portfolio_website/docs-meta/content-model.html">docs-meta/content-model.md</a>.</li>
+<li><strong>Add a deep dive:</strong> Duplicate <a href="../portfolio_website/posts/splash-template.html">posts/splash-template.qmd</a> + <a href="../portfolio_website/posts/post-template.html">posts/post-template.qmd</a>, add entry to <a href="blog.json">blog.json</a> pointing <code>href</code> at the splash’s <code>.html</code>. See <a href="../portfolio_website/docs-meta/content-model.html">docs-meta/content-model.md</a>.</li>
+<li><strong>Change homepage bento content:</strong> Edit <a href="../portfolio_website/index.html">index.qmd</a> — it’s handwritten, not JSON-driven.</li>
+<li><strong>Change nav links:</strong> Edit the navbar block in every root <code>*.qmd</code> (navbar is copy-pasted across root pages by design — see <a href="../portfolio_website/docs-meta/decisions.html">docs-meta/decisions.md</a> entry 10).</li>
+<li><strong>Swap the resume PDF:</strong> Replace <a href="assets/resume.pdf">assets/resume.pdf</a>. Nothing else.</li>
+<li><strong>Render + deploy:</strong> <code>quarto render &amp;&amp; git add . &amp;&amp; git commit &amp;&amp; git push</code>.</li>
+</ul>
+<hr>
+</section>
+<section id="one-more-thing-build-before-you-commit" class="level2">
+<h2 class="anchored" data-anchor-id="one-more-thing-build-before-you-commit">One more thing — build before you commit</h2>
+<p>The <code>/docs</code> folder is part of the repo. If you change source files but don’t re-render, the live site won’t reflect your changes. Always: edit → <code>quarto render</code> → commit (both source and rebuilt <code>/docs</code>) → push.</p>
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1776908149983" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2923">
-<a href="./projects/hw1/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw1/index_files/figure-html/cell-5-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-A/B Testing a Call to Action
-</h5>
-<div class="card-text listing-description delink">
-Every website with a newsletter faces the same quiet dilemma: what do you actually <em>say</em> to get someone to sign up? The words you choose — your “call to action,” or CTA — can…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1772611200000" data-listing-file-modified-sort="1776300244810" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
-<a href="./projects/project1/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/project1/index_files/figure-html/cell-2-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Analysis of Cars
-</h5>
-<div class="card-text listing-description delink">
-Here is a plot:
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha K
-</div>
-<div class="listing-date">
-Mar 4, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="2" data-listing-word-count-sort="387">
-<a href="./portfolio_website/projects/new-project-template.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Overview
-</h5>
-<div class="card-text listing-description delink">
+</section>
+</section>
 
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1779083201534" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2633">
-<a href="./projects/hw3/hw3_blueprinty.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw3/hw3_blueprinty_files/figure-html/cell-3-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Poisson Regression and Maximum Likelihood Estimation
-</h5>
-<div class="card-text listing-description delink">
-Blueprinty is a small software company that sells tools for engineering firms developing blueprint documentation specifically for US patent applications. Their marketing…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha Kothapalli
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1776912774019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1765">
-<a href="./projects/hw2/hw2.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw2/hw2_files/figure-html/red-blue-plot-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Replication of Karlan and List (2007)
-</h5>
-<div class="card-text listing-description delink">
-Karlan and List (2007) conducted one of the most influential natural field experiments in the economics of charitable giving. The authors partnered with a liberal US…<strong></strong>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha K
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="8" data-listing-word-count-sort="1581">
-<a href="./portfolio_website/projects/traway.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Traway Operations Analytics — Yash Tiwari
-</h5>
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1775547376372">
-<a href="./projects/project2/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="5" data-listing-word-count-sort="806">
-<a href="./portfolio_website/projects/traway-bridge.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

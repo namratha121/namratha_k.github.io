@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Projects – marketing analytics</title>
+<title>info – marketing analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,67 +68,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -140,9 +80,9 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">marketing analytics</span>
     </a>
   </div>
@@ -153,15 +93,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resume.html"> 
+    <a class="nav-link" href="../resume.html"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">projects</span></a>
   </li>  
 </ul>
@@ -175,198 +115,226 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#yash-tiwari" id="toc-yash-tiwari" class="nav-link active" data-scroll-target="#yash-tiwari">Yash Tiwari</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a>
+  <ul class="collapse">
+  <li><a href="#university-of-california-san-diego-rady-school-of-management" id="toc-university-of-california-san-diego-rady-school-of-management" class="nav-link" data-scroll-target="#university-of-california-san-diego-rady-school-of-management">University of California, San Diego — Rady School of Management</a></li>
+  <li><a href="#national-institute-of-technology-srinagar-india" id="toc-national-institute-of-technology-srinagar-india" class="nav-link" data-scroll-target="#national-institute-of-technology-srinagar-india">National Institute of Technology, Srinagar, India</a></li>
+  </ul></li>
+  <li><a href="#technical-skills" id="toc-technical-skills" class="nav-link" data-scroll-target="#technical-skills">Technical Skills</a>
+  <ul class="collapse">
+  <li><a href="#programming-analytics" id="toc-programming-analytics" class="nav-link" data-scroll-target="#programming-analytics">Programming &amp; Analytics</a></li>
+  <li><a href="#data-analytics" id="toc-data-analytics" class="nav-link" data-scroll-target="#data-analytics">Data &amp; Analytics</a></li>
+  <li><a href="#big-data-tools" id="toc-big-data-tools" class="nav-link" data-scroll-target="#big-data-tools">Big Data Tools</a></li>
+  <li><a href="#automation-tools" id="toc-automation-tools" class="nav-link" data-scroll-target="#automation-tools">Automation &amp; Tools</a></li>
+  </ul></li>
+  <li><a href="#experience" id="toc-experience" class="nav-link" data-scroll-target="#experience">Experience</a>
+  <ul class="collapse">
+  <li><a href="#product-analyst-full-time-intern-ceos-office" id="toc-product-analyst-full-time-intern-ceos-office" class="nav-link" data-scroll-target="#product-analyst-full-time-intern-ceos-office">Product Analyst (Full-time Intern, CEO’s Office)</a></li>
+  <li><a href="#user-experience-designer-intern" id="toc-user-experience-designer-intern" class="nav-link" data-scroll-target="#user-experience-designer-intern">User Experience Designer Intern</a></li>
+  <li><a href="#co-founder-ceo" id="toc-co-founder-ceo" class="nav-link" data-scroll-target="#co-founder-ceo">Co-founder &amp; CEO</a></li>
+  </ul></li>
+  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">Projects</a>
+  <ul class="collapse">
+  <li><a href="#intuit-quickbooks-upsell-targeting-ml-classification-profit-optimization" id="toc-intuit-quickbooks-upsell-targeting-ml-classification-profit-optimization" class="nav-link" data-scroll-target="#intuit-quickbooks-upsell-targeting-ml-classification-profit-optimization">Intuit QuickBooks Upsell Targeting — ML Classification &amp; Profit Optimization</a></li>
+  <li><a href="#customer-level-message-optimization-nptb" id="toc-customer-level-message-optimization-nptb" class="nav-link" data-scroll-target="#customer-level-message-optimization-nptb">Customer-Level Message Optimization (NPTB)</a></li>
+  </ul></li>
+  <li><a href="#notes-for-llm-website-generation" id="toc-notes-for-llm-website-generation" class="nav-link" data-scroll-target="#notes-for-llm-website-generation">Notes for LLM Website Generation</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">My Projects</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
+<section id="yash-tiwari" class="level1">
+<h1>Yash Tiwari</h1>
+<ul>
+<li>Location: San Diego, CA</li>
+<li>Phone: (945)-994-2056</li>
+<li>Email: <a href="mailto:ytiwari@ucsd.edu">ytiwari@ucsd.edu</a></li>
+<li>LinkedIn: [Add Link]</li>
+<li>GitHub: [Add Link]</li>
+<li>Portfolio: [Add Link]</li>
+</ul>
+<hr>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Master’s student in Business Analytics at UC San Diego with strong experience in machine learning, data analysis, and product analytics. Proven ability to drive measurable business impact through data-driven decision-making, automation, and experimentation.</p>
+<hr>
+</section>
+<section id="education" class="level2">
+<h2 class="anchored" data-anchor-id="education">Education</h2>
+<section id="university-of-california-san-diego-rady-school-of-management" class="level3">
+<h3 class="anchored" data-anchor-id="university-of-california-san-diego-rady-school-of-management">University of California, San Diego — Rady School of Management</h3>
+<ul>
+<li><p><strong>Master of Science in Business Analytics</strong> (Expected: Dec 2026)</p></li>
+<li><p>GPA: 3.93</p></li>
+<li><p>Relevant Coursework:</p>
+<ul>
+<li>Business Analytics</li>
+<li>Collecting &amp; Analyzing Large Datasets</li>
+<li>Statistical Modelling</li>
+</ul></li>
+</ul>
+</section>
+<section id="national-institute-of-technology-srinagar-india" class="level3">
+<h3 class="anchored" data-anchor-id="national-institute-of-technology-srinagar-india">National Institute of Technology, Srinagar, India</h3>
+<ul>
+<li><p><strong>Bachelor of Technology in Mechanical Engineering</strong> (Jun 2025)</p></li>
+<li><p>GPA: 3.89</p></li>
+<li><p>Awards:</p>
+<ul>
+<li>2× First Runner-up – All India UX/UI Case Competition</li>
+<li>Recognized for UX design and problem solving</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="technical-skills" class="level2">
+<h2 class="anchored" data-anchor-id="technical-skills">Technical Skills</h2>
+<section id="programming-analytics" class="level3">
+<h3 class="anchored" data-anchor-id="programming-analytics">Programming &amp; Analytics</h3>
+<ul>
+<li>Python (Pandas, Polars, SciPy, scikit-learn, PyTorch)</li>
+<li>SQL (5★ HackerRank)</li>
+<li>R</li>
+<li>Predictive Modeling</li>
+<li>Feature Engineering</li>
+<li>Ensemble Methods (XGBoost, Random Forest, Gradient Boosting)</li>
+<li>GLM</li>
+<li>Classification, Regression, Clustering</li>
+<li>Uplift Modeling</li>
+</ul>
+</section>
+<section id="data-analytics" class="level3">
+<h3 class="anchored" data-anchor-id="data-analytics">Data &amp; Analytics</h3>
+<ul>
+<li>Exploratory Data Analysis (EDA)</li>
+<li>Statistical Testing</li>
+<li>A/B Testing</li>
+<li>Data Mining</li>
+<li>Data Modeling</li>
+<li>Root Cause Analysis</li>
+<li>ROI Analysis</li>
+</ul>
+</section>
+<section id="big-data-tools" class="level3">
+<h3 class="anchored" data-anchor-id="big-data-tools">Big Data Tools</h3>
+<ul>
+<li>PySpark (Coursework)</li>
+<li>Snowflake</li>
+<li>Hadoop</li>
+</ul>
+</section>
+<section id="automation-tools" class="level3">
+<h3 class="anchored" data-anchor-id="automation-tools">Automation &amp; Tools</h3>
+<ul>
+<li>n8n</li>
+<li>Zapier</li>
+<li>Make</li>
+<li>Workflow Automation</li>
+<li>Git</li>
+<li>Vim / NeoVim</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="experience" class="level2">
+<h2 class="anchored" data-anchor-id="experience">Experience</h2>
+<section id="product-analyst-full-time-intern-ceos-office" class="level3">
+<h3 class="anchored" data-anchor-id="product-analyst-full-time-intern-ceos-office">Product Analyst (Full-time Intern, CEO’s Office)</h3>
+<p><strong>Intellsys.ai, GrowthJockey — India</strong> <em>Jan 2025 – Jun 2025</em></p>
+<ul>
+<li>Built automated n8n + Python pipelines processing 100K+ records/day from structured and unstructured data sources, reducing acquisition costs by $100K+.</li>
+<li>Conducted statistical analysis and A/B tests across 1M+ recipients, improving engagement by 30%.</li>
+<li>Analyzed website traffic, funnel drop-offs, and behavioral cohorts using Google Analytics, Excel, and Tableau to generate data-backed recommendations.</li>
+</ul>
+</section>
+<section id="user-experience-designer-intern" class="level3">
+<h3 class="anchored" data-anchor-id="user-experience-designer-intern">User Experience Designer Intern</h3>
+<p><strong>BotLab Dynamics Pvt. Ltd.&nbsp;— New Delhi, India</strong> <em>Dec 2023 – Dec 2024</em></p>
+<ul>
+<li>Led end-to-end design of a data-driven GCS app for the Indian Navy iDEX initiative, reducing operator task time by ~25%.</li>
+<li>Delivered 50+ screens and supported full product lifecycle including requirements gathering and design-to-development handoff.</li>
+</ul>
+</section>
+<section id="co-founder-ceo" class="level3">
+<h3 class="anchored" data-anchor-id="co-founder-ceo">Co-founder &amp; CEO</h3>
+<p><strong>Traway &amp; TheLoudKitchens — Srinagar</strong> <em>Dec 2022 – Jul 2024</em></p>
+<ul>
+<li>Built and scaled 2 student-led ventures; led 10+ cross-functional members and executed 175+ events.</li>
+<li>Applied segmentation, pricing, and cohort analysis on 3,000+ customers, improving retention to 60%+.</li>
+<li>Achieved 3× increase in AOV for TheLoudKitchens and improved retention for Traway.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="projects" class="level2">
+<h2 class="anchored" data-anchor-id="projects">Projects</h2>
+<section id="intuit-quickbooks-upsell-targeting-ml-classification-profit-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="intuit-quickbooks-upsell-targeting-ml-classification-profit-optimization">Intuit QuickBooks Upsell Targeting — ML Classification &amp; Profit Optimization</h3>
+<p><em>Feb 2026</em></p>
+<ul>
+<li>Engineered features on 75K structured business records.</li>
+<li>Trained Logistic Regression (GLM), Random Forest, XGBoost, and MLP models.</li>
+<li>Performed hyperparameter tuning via grid search and cross-validation.</li>
+<li>Built a profit-maximizing ensemble model ranked #1 among 60+ teams.</li>
+<li>Applied profit-threshold targeting ($1.41 cost vs.&nbsp;$60 margin) and scaled predictions to 800K+ population.</li>
+</ul>
+</section>
+<section id="customer-level-message-optimization-nptb" class="level3">
+<h3 class="anchored" data-anchor-id="customer-level-message-optimization-nptb">Customer-Level Message Optimization (NPTB)</h3>
+<p><em>Feb 2026</em></p>
+<ul>
+<li>Built an end-to-end ML pipeline on ~600K customer-email rows using Python and Polars.</li>
+<li>Trained Logistic Regression, Random Forest, XGBoost, and MLP models across 7 messaging conditions.</li>
+<li>Selected XGBoost as final model achieving €0.8398 profit/customer.</li>
+<li>Delivered +51.3% uplift vs random assignment (~€1.42M projected at 5M customers).</li>
+<li>Optimized expected profit using P(buy) × E(order size) × margin with cross-validation and test evaluation.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="notes-for-llm-website-generation" class="level2">
+<h2 class="anchored" data-anchor-id="notes-for-llm-website-generation">Notes for LLM Website Generation</h2>
+<ul>
+<li><p>Highlight <strong>impact metrics</strong> (e.g., $100K savings, 30% engagement lift, €1.42M uplift).</p></li>
+<li><p>Emphasize <strong>machine learning + business impact intersection</strong>.</p></li>
+<li><p>Strong mix of:</p>
+<ul>
+<li>Product analytics</li>
+<li>Machine learning</li>
+<li>UX + entrepreneurship</li>
+</ul></li>
+<li><p>Showcase projects with <strong>clear ROI and ranking (#1/60 teams)</strong>.</p></li>
+<li><p>Include sections for:</p>
+<ul>
+<li>Projects (detailed case studies)</li>
+<li>Experience (impact-focused bullets)</li>
+<li>Skills (grouped by category)</li>
+</ul></li>
+<li><p>Add links to GitHub and portfolio projects when available.</p></li>
+</ul>
+<hr>
+<p><em>(Source: Resume — fileciteturn0file0)</em></p>
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1776908149983" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2923">
-<a href="./projects/hw1/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw1/index_files/figure-html/cell-5-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-A/B Testing a Call to Action
-</h5>
-<div class="card-text listing-description delink">
-Every website with a newsletter faces the same quiet dilemma: what do you actually <em>say</em> to get someone to sign up? The words you choose — your “call to action,” or CTA — can…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1772611200000" data-listing-file-modified-sort="1776300244810" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
-<a href="./projects/project1/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/project1/index_files/figure-html/cell-2-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Analysis of Cars
-</h5>
-<div class="card-text listing-description delink">
-Here is a plot:
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha K
-</div>
-<div class="listing-date">
-Mar 4, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="2" data-listing-word-count-sort="387">
-<a href="./portfolio_website/projects/new-project-template.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Overview
-</h5>
-<div class="card-text listing-description delink">
+</section>
+</section>
 
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1779083201534" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2633">
-<a href="./projects/hw3/hw3_blueprinty.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw3/hw3_blueprinty_files/figure-html/cell-3-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Poisson Regression and Maximum Likelihood Estimation
-</h5>
-<div class="card-text listing-description delink">
-Blueprinty is a small software company that sells tools for engineering firms developing blueprint documentation specifically for US patent applications. Their marketing…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha Kothapalli
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1776912774019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1765">
-<a href="./projects/hw2/hw2.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw2/hw2_files/figure-html/red-blue-plot-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Replication of Karlan and List (2007)
-</h5>
-<div class="card-text listing-description delink">
-Karlan and List (2007) conducted one of the most influential natural field experiments in the economics of charitable giving. The authors partnered with a liberal US…<strong></strong>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha K
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="8" data-listing-word-count-sort="1581">
-<a href="./portfolio_website/projects/traway.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Traway Operations Analytics — Yash Tiwari
-</h5>
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1775547376372">
-<a href="./projects/project2/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="5" data-listing-word-count-sort="806">
-<a href="./portfolio_website/projects/traway-bridge.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

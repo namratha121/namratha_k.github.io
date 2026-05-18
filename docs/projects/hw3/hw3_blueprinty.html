@@ -258,7 +258,7 @@ window.Quarto = {
 </section>
 <section id="exploring-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-the-data">Exploring the Data</h2>
-<div id="1e68442b" class="cell" data-execution_count="1">
+<div id="66a7e625" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -306,7 +306,7 @@ Non-Customer    1019.0  3.47  2.23  0.0  2.0  3.0  5.0  16.0</code></pre>
 </div>
 <section id="patent-counts-by-customer-status" class="level3">
 <h3 class="anchored" data-anchor-id="patent-counts-by-customer-status">Patent Counts by Customer Status</h3>
-<div id="11907d19" class="cell" data-execution_count="2">
+<div id="217fdb6c" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -319,7 +319,7 @@ Non-Customer    1019.0  3.47  2.23  0.0  2.0  3.0  5.0  16.0</code></pre>
 </section>
 <section id="regional-differences" class="level3">
 <h3 class="anchored" data-anchor-id="regional-differences">Regional Differences</h3>
-<div id="30665ef5" class="cell" data-execution_count="3">
+<div id="af14fd56" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -341,7 +341,7 @@ Southwest           17.5          82.5</code></pre>
 </section>
 <section id="age-differences" class="level3">
 <h3 class="anchored" data-anchor-id="age-differences">Age Differences</h3>
-<div id="0970061a" class="cell" data-execution_count="4">
+<div id="ec4c2c5e" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -378,7 +378,7 @@ Mean age — Customer: 26.9</code></pre>
 </section>
 <section id="log-likelihood-function-and-plot" class="level3">
 <h3 class="anchored" data-anchor-id="log-likelihood-function-and-plot">Log-Likelihood Function and Plot</h3>
-<div id="d9a64eb0" class="cell" data-execution_count="5">
+<div id="e87a909b" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> df[<span class="st">"patents"</span>].values</span>
@@ -415,7 +415,7 @@ Mean age — Customer: 26.9</code></pre>
 </section>
 <section id="numerical-maximization" class="level3">
 <h3 class="anchored" data-anchor-id="numerical-maximization">Numerical Maximization</h3>
-<div id="a2df0c21" class="cell" data-execution_count="6">
+<div id="1850b1dc" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>result_scalar <span class="op">=</span> optimize.minimize_scalar(</span>
@@ -445,7 +445,7 @@ Difference:                4.41e-07</code></pre>
 <p>Here <span class="math inline">\(X_i\)</span> is a row vector of covariates for firm <span class="math inline">\(i\)</span> and <span class="math inline">\(\beta\)</span> is a vector of coefficients to be estimated. We use the exponential link <span class="math inline">\(\lambda_i = \exp(X_i'\beta)\)</span> for a fundamental reason: <span class="math inline">\(\lambda_i\)</span> must be strictly positive, yet <span class="math inline">\(X_i'\beta\)</span> is an unconstrained real number. The exponential function maps the real line onto the positive reals, ensuring predictions are always valid.</p>
 <section id="log-likelihood-for-poisson-regression" class="level3">
 <h3 class="anchored" data-anchor-id="log-likelihood-for-poisson-regression">Log-Likelihood for Poisson Regression</h3>
-<div id="5e7933a1" class="cell" data-execution_count="7">
+<div id="bec7e018" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Build the design matrix ──────────────────────────────────────────────</span></span>
@@ -475,7 +475,7 @@ Columns: ['intercept', 'age', 'age_sq', 'Midwest', 'Northwest', 'South', 'Southw
 <li><strong>Regional indicators</strong> for Midwest, Northwest, South, and Southwest, with Northeast as the reference category. One region must be omitted to avoid perfect collinearity with the intercept (the dummy variable trap).</li>
 <li><strong>iscustomer</strong>: the binary variable of primary interest.</li>
 </ul>
-<div id="dba09242" class="cell" data-execution_count="8">
+<div id="3ea3dc0d" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poisson_reg_loglik(beta, Y, X):</span>
@@ -496,7 +496,7 @@ Columns: ['intercept', 'age', 'age_sq', 'Midwest', 'Northwest', 'South', 'Southw
 </section>
 <section id="finding-the-mle-numerically" class="level3">
 <h3 class="anchored" data-anchor-id="finding-the-mle-numerically">Finding the MLE Numerically</h3>
-<div id="429294f8" class="cell" data-execution_count="9">
+<div id="fbd152fa" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>result_reg <span class="op">=</span> optimize.minimize(</span>
@@ -529,7 +529,7 @@ Columns: ['intercept', 'age', 'age_sq', 'Midwest', 'Northwest', 'South', 'Southw
 </div>
 </div>
 <p>Standard errors come from the <strong>observed Fisher information</strong>: the negative inverse Hessian of the log-likelihood evaluated at the MLE. Intuitively, a very curved (tight) log-likelihood means the data are informative and the MLE is precise; a flat log-likelihood means the MLE is uncertain. The square roots of the diagonal elements of <span class="math inline">\((-H)^{-1}\)</span> are the asymptotic standard errors.</p>
-<div id="06977e30" class="cell" data-execution_count="10">
+<div id="215ec2c6" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-stdout">
 <pre><code>───────────────────────────────────────────────────────
 Variable           Coef   Std. Err.        z
@@ -548,7 +548,7 @@ iscustomer       0.2076      0.0309     6.72
 </section>
 <section id="verification-with-statsmodels" class="level3">
 <h3 class="anchored" data-anchor-id="verification-with-statsmodels">Verification with <code>statsmodels</code></h3>
-<div id="a4e3ee21" class="cell" data-execution_count="11">
+<div id="9d07c8fb" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>glm_model  <span class="op">=</span> sm.GLM(Y, X, family<span class="op">=</span>sm.families.Poisson())</span>
@@ -579,7 +579,7 @@ iscustomer   0.2076  0.0309    0.2076  0.0309</code></pre>
 </section>
 <section id="interpreting-the-coefficients" class="level3">
 <h3 class="anchored" data-anchor-id="interpreting-the-coefficients">Interpreting the Coefficients</h3>
-<div id="e9c219c4" class="cell" data-execution_count="12">
+<div id="3d808407" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -600,7 +600,7 @@ iscustomer   0.2076  0.0309    0.2076  0.0309</code></pre>
 <section id="the-effect-of-blueprintys-software" class="level2">
 <h2 class="anchored" data-anchor-id="the-effect-of-blueprintys-software">The Effect of Blueprinty’s Software</h2>
 <p>Poisson regression coefficients operate on the <strong>multiplicative</strong> scale of <span class="math inline">\(\lambda\)</span>, so <span class="math inline">\(\hat\beta_{\text{iscustomer}} = 0.208\)</span> means the expected patent rate is multiplied by <span class="math inline">\(e^{0.208} \approx 1.23\)</span> for customers. To translate this into a more concrete, additive quantity — extra patents per firm — we use the <strong>counterfactual prediction</strong> approach.</p>
-<div id="ad8ff32a" class="cell" data-execution_count="13">
+<div id="0d62e404" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Counterfactual datasets</span></span>
@@ -621,7 +621,7 @@ Average predicted patents (customer):      4.229
 Average treatment effect (ATE):            0.793</code></pre>
 </div>
 </div>
-<div id="6e523575" class="cell" data-execution_count="14">
+<div id="dd301482" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">

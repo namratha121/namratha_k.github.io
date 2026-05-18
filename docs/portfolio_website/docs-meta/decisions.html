@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Projects – marketing analytics</title>
+<title>decisions – marketing analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,67 +68,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -140,9 +80,9 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">marketing analytics</span>
     </a>
   </div>
@@ -153,15 +93,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resume.html"> 
+    <a class="nav-link" href="../../resume.html"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">projects</span></a>
   </li>  
 </ul>
@@ -175,198 +115,144 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#design-build-decisions" id="toc-design-build-decisions" class="nav-link active" data-scroll-target="#design-build-decisions">Design &amp; Build Decisions</a>
+  <ul class="collapse">
+  <li><a href="#index-archived-decisions-145" id="toc-index-archived-decisions-145" class="nav-link" data-scroll-target="#index-archived-decisions-145">Index — archived decisions 1–45</a>
+  <ul class="collapse">
+  <li><a href="#build-project-layout" id="toc-build-project-layout" class="nav-link" data-scroll-target="#build-project-layout">Build &amp; project layout</a></li>
+  <li><a href="#light-mode-contrast" id="toc-light-mode-contrast" class="nav-link" data-scroll-target="#light-mode-contrast">Light mode &amp; contrast</a></li>
+  <li><a href="#bento-grid-cells" id="toc-bento-grid-cells" class="nav-link" data-scroll-target="#bento-grid-cells">Bento grid &amp; cells</a></li>
+  <li><a href="#hero-effects" id="toc-hero-effects" class="nav-link" data-scroll-target="#hero-effects">Hero effects</a></li>
+  <li><a href="#projects-page-cards" id="toc-projects-page-cards" class="nav-link" data-scroll-target="#projects-page-cards">Projects page &amp; cards</a></li>
+  <li><a href="#build-automation" id="toc-build-automation" class="nav-link" data-scroll-target="#build-automation">Build automation</a></li>
+  </ul></li>
+  <li><a href="#new-decisions" id="toc-new-decisions" class="nav-link" data-scroll-target="#new-decisions">New decisions</a></li>
+  <li><a href="#llm-facing-docs-split-into-claude.md-docs-meta" id="toc-llm-facing-docs-split-into-claude.md-docs-meta" class="nav-link" data-scroll-target="#llm-facing-docs-split-into-claude.md-docs-meta">46. LLM-facing docs split into CLAUDE.md + docs-meta/</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">My Projects</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
+<section id="design-build-decisions" class="level1">
+<h1>Design &amp; Build Decisions</h1>
+<p>Append-only log of non-obvious tradeoffs. Each entry answers three questions: <strong>what was decided, why, when it might be worth revisiting.</strong></p>
+<ul>
+<li><strong>Pre-2026-04-15 decisions</strong> (entries 1–45) live in the <a href="_archive/decisions.md">archive</a> with full prose. This file indexes them as one-liners so an LLM can scan them fast and only deep-dive when needed.</li>
+<li><strong>New decisions</strong> (2026-04-15 onward) are written directly in this file with full prose. Append at the bottom.</li>
+</ul>
+<p>When you make a non-obvious tradeoff, add an entry here before moving on. A “non-obvious tradeoff” is any choice a future reader (or future LLM) would question without the reasoning.</p>
+<hr>
+<section id="index-archived-decisions-145" class="level2">
+<h2 class="anchored" data-anchor-id="index-archived-decisions-145">Index — archived decisions 1–45</h2>
+<p>Full text in <a href="_archive/decisions.md#1-output-directory-docs-not-_site">_archive/decisions.md</a>.</p>
+<section id="build-project-layout" class="level3">
+<h3 class="anchored" data-anchor-id="build-project-layout">Build &amp; project layout</h3>
+<ol type="1">
+<li>Output directory <code>docs/</code> not <code>_site/</code> — GitHub Pages reads <code>/docs</code> on main, no gh-pages branch needed.</li>
+<li><code>theme: none</code> + <code>minimal: true</code> — strips Bootstrap and Quarto scaffolding; design is 100% custom.</li>
+<li>All CSS in one file (<code>styles/custom.css</code>) — one place for colors, one place for components.</li>
+<li>JS inlined via <code>_partials/scripts.html</code> (not <code>&lt;script src&gt;</code>) — solves relative-path problem on nested pages.</li>
+<li>Dark mode default via inline <code>&lt;script&gt;</code> in <code>&lt;head&gt;</code> — fires before first paint, prevents flash.</li>
+<li>Active nav link detected by JS, not hardcoded — same navbar HTML in every page.</li>
+<li><code>render: ["*.qmd"]</code> glob — excludes <code>info.md</code> from being rendered to HTML.</li>
+<li>Subdirectory pages use <code>../</code> nav paths — only structural difference between root and <code>projects/</code> pages.</li>
+<li>Case studies live in <code>projects/</code> subfolder — keeps root to 4 top-level pages.</li>
+<li>No Quarto navbar (<code>navbar: false</code>) — custom <code>&lt;header&gt;</code> avoids Bootstrap dependency.</li>
+</ol>
+</section>
+<section id="light-mode-contrast" class="level3">
+<h3 class="anchored" data-anchor-id="light-mode-contrast">Light mode &amp; contrast</h3>
+<ol start="11" type="1">
+<li>Light-mode overrides in a dedicated <code>html:not(.dark)</code> block at end of CSS — audit-friendly, no dark-mode regressions.</li>
+<li><code>.t-dim</code> (#888) and <code>.blink-cursor</code> global, not light-scoped — terminal is always dark, fix is unconditional.</li>
+<li>Accent changed <code>#2563EB</code> → <code>#3B82F6</code> — meets WCAG AA on dark background (5.1:1).</li>
+</ol>
+</section>
+<section id="bento-grid-cells" class="level3">
+<h3 class="anchored" data-anchor-id="bento-grid-cells">Bento grid &amp; cells</h3>
+<ol start="13" type="1">
+<li><code>.p-card</code> “Read more” pinned via flexbox column, not fixed height — handles variable description length.</li>
+<li>Cell E targeted by <code>.cell-contact</code> class, not <code>:has()</code> — explicit &gt; fragile pseudo-class support.</li>
+<li><code>h1.hero-name</code> reset block added — defeats Quarto’s injected h1 styles without <code>!important</code>.</li>
+<li>Bio split into two <code>&lt;p&gt;</code> tags with inline <code>margin-bottom</code> — intentional rhetorical beat.</li>
+<li>Cell D = philosophy cell with <code>.c-quote</code> + <code>.c-building-sub</code> — promotes the memorable line.</li>
+<li><code>.cell-available</code> accent top border — draws the eye to recruiter-relevant info.</li>
+<li>Liquid glass scoped away from <code>.terminal-cell</code> — terminal is semantically opaque (code env, not UI panel).</li>
+<li>Light-mode glass cells use <code>box-shadow</code> outline, not <code>border</code> — works with <code>background-clip: padding-box</code>.</li>
+<li>Dark <code>.btn-primary</code> = glass; light = solid + shadow — asymmetric handling, glass is a dark-mode pattern.</li>
+</ol>
+</section>
+<section id="hero-effects" class="level3">
+<h3 class="anchored" data-anchor-id="hero-effects">Hero effects</h3>
+<ol start="22" type="1">
+<li>Light-mode blob — opacity 0.28, <code>mix-blend-mode: multiply</code>, blur 32px — visible without palette conflict.</li>
+<li>Cursor blob: global listener, <code>MAX_DRIFT=120px</code>, 3s idle reset — ambient, never freezes mid-drift.</li>
+<li><code>.hero-wrap</code> full-viewport width; constraints on <code>.hero-inner</code> — lets dot grid bleed edge-to-edge.</li>
+<li>Dot grid = cursor spotlight (no lerp) + grid parallax (lerp 0.035) — two separate effects for two qualities.</li>
+<li>Light-mode blob rewritten → monochromatic depth vignette (superseded by #27).</li>
+<li>Light-mode blob settled on indigo at 20% — mirrors dark’s warm-cool tension on a warm canvas.</li>
+<li>Sticky navbar fix — glass-system block was overriding <code>position: sticky</code> with <code>relative</code>.</li>
+<li>Blob gradients: <code>radial-gradient(circle at 50% 50%, ...)</code> everywhere — spherical, not rectangular sweep.</li>
+</ol>
+</section>
+<section id="projects-page-cards" class="level3">
+<h3 class="anchored" data-anchor-id="projects-page-cards">Projects page &amp; cards</h3>
+<ol start="29" type="1">
+<li><code>projects.json</code> = single source of truth for project cards — one file, no HTML-in-two-places duplication.</li>
+<li>Whole card clickable via delegated click handler — guard with <code>e.target.closest('a')</code> to prevent double-nav.</li>
+<li>Case study template: <code>include-before-body</code> for navbar only — inline <code>{=html}</code> for data; Pandoc <code>$vars$</code> don’t work in raw includes.</li>
+<li>Traway uses a bridge page, not a direct external link — keeps clicks inside the portfolio.</li>
+<li>Banner-to-grid spacing: <code>.page-banner ~ .projects-section { padding-top: 0 }</code> — sibling selector, doesn’t touch the homepage case.</li>
+<li><code>.p-desc</code> clamp raised to 3 lines + <code>min-height: 60px</code> — ensures impact metric is visible; even row heights.</li>
+<li><code>.p-card:focus-visible</code> + <code>this.blur()</code> on click — keyboard accessibility preserved, no stuck focus ring.</li>
+<li>Category filter bar generated from JSON — add a category = set <code>"category": "..."</code> in JSON, button appears.</li>
+<li>Card borders: subtle 1px base + refined blue/violet shadow layering on hover — rejects <code>border-image</code> (conflicts with <code>border-radius</code>).</li>
+<li>Bento cell hover: <code>box-shadow</code> glow layers only, no border lines — shadows don’t bleed onto neighbors.</li>
+<li>Project card hover shadows: pronounced blue+violet layered glow — gradient effect without <code>border-image</code>.</li>
+<li>Filter button borders at <code>rgba(240,238,232,0.25)</code> — readable at 2.5× the previous subtle border.</li>
+<li>Badge (<code>Open to Opportunities</code>) gets hover scale + green glow — ties to pulsing dot’s semantics.</li>
+</ol>
+</section>
+<section id="build-automation" class="level3">
+<h3 class="anchored" data-anchor-id="build-automation">Build automation</h3>
+<ol start="37" type="1">
+<li><code>sync-scripts.py</code> pre-render hook — <code>js/main.js</code> is SoT; <code>_partials/scripts.html</code> is auto-generated and gitignored.</li>
+<li>CSS cleanup — removed old <code>.cell</code> duplicates and <code>transition: all</code>; explicit property transitions throughout.</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="new-decisions" class="level2">
+<h2 class="anchored" data-anchor-id="new-decisions">New decisions</h2>
+<p>Append here. Format:</p>
+<pre><code>## N. Short title
+
+**Decision:** What was chosen.
+**Why:** The reasoning, including what was rejected and why.
+**When to revisit:** The condition or signal that would make this worth re-examining.</code></pre>
+<hr>
+</section>
+<section id="llm-facing-docs-split-into-claude.md-docs-meta" class="level2">
+<h2 class="anchored" data-anchor-id="llm-facing-docs-split-into-claude.md-docs-meta">46. LLM-facing docs split into CLAUDE.md + docs-meta/</h2>
+<p><strong>Decision:</strong> Introduced <a href="../../portfolio_website/CLAUDE.html">CLAUDE.md</a> at the repo root as the single entry point for any LLM working on the site, with supporting docs in <code>docs-meta/</code> (design system, content model, build &amp; deploy, file map, this decisions log). Originals (<code>architecture.md</code>, <code>decisions.md</code>, <code>codex_design.md</code>) moved to <code>docs-meta/_archive/</code> via <code>git mv</code> to preserve history.</p>
+<p><strong>Why:</strong> Before this change, three sibling markdown files sat at the repo root with no index and no rule for which to load first or which to update after a change. An LLM arriving cold had to scan all three to orient, and updates drifted because nobody knew which file owned what. A single entry point + split-by-concern supporting docs means the LLM loads only what the task needs, and a “what to update when” protocol in CLAUDE.md tells it which doc to refresh. <code>docs-meta/</code> (not <code>docs/</code>) because Quarto’s build output already owns <code>/docs</code> — naming collision would be a real footgun.</p>
+<p><strong>When to revisit:</strong> If the site grows a second audience (a human wiki, a public contributor’s guide), the CLAUDE.md + docs-meta split may no longer serve both audiences well — consider a separate README.md for humans while keeping CLAUDE.md LLM-focused.</p>
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1776908149983" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2923">
-<a href="./projects/hw1/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw1/index_files/figure-html/cell-5-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-A/B Testing a Call to Action
-</h5>
-<div class="card-text listing-description delink">
-Every website with a newsletter faces the same quiet dilemma: what do you actually <em>say</em> to get someone to sign up? The words you choose — your “call to action,” or CTA — can…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1772611200000" data-listing-file-modified-sort="1776300244810" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
-<a href="./projects/project1/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/project1/index_files/figure-html/cell-2-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Analysis of Cars
-</h5>
-<div class="card-text listing-description delink">
-Here is a plot:
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha K
-</div>
-<div class="listing-date">
-Mar 4, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="2" data-listing-word-count-sort="387">
-<a href="./portfolio_website/projects/new-project-template.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Overview
-</h5>
-<div class="card-text listing-description delink">
+</section>
+</section>
 
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1779083201534" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2633">
-<a href="./projects/hw3/hw3_blueprinty.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw3/hw3_blueprinty_files/figure-html/cell-3-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Poisson Regression and Maximum Likelihood Estimation
-</h5>
-<div class="card-text listing-description delink">
-Blueprinty is a small software company that sells tools for engineering firms developing blueprint documentation specifically for US patent applications. Their marketing…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha Kothapalli
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1779001200000" data-listing-file-modified-sort="1776912774019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1765">
-<a href="./projects/hw2/hw2.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/hw2/hw2_files/figure-html/red-blue-plot-output-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Replication of Karlan and List (2007)
-</h5>
-<div class="card-text listing-description delink">
-Karlan and List (2007) conducted one of the most influential natural field experiments in the economics of charitable giving. The authors partnered with a liberal US…<strong></strong>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Namratha K
-</div>
-<div class="listing-date">
-May 17, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="8" data-listing-word-count-sort="1581">
-<a href="./portfolio_website/projects/traway.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Traway Operations Analytics — Yash Tiwari
-</h5>
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1775547376372">
-<a href="./projects/project2/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1777506735747" data-listing-reading-time-sort="5" data-listing-word-count-sort="806">
-<a href="./portfolio_website/projects/traway-bridge.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<div class="card-text listing-description delink">
-
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
