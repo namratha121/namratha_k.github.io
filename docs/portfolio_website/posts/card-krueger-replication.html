@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Replicating Card &amp; Krueger (1994) — Yash Tiwari – marketing analytics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">marketing analytics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resume.html"> 
+<span class="menu-text">Resume</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">projects</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+<!-- main -->
+
+
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVBAR — uses ../ prefix (posts/ subdirectory)
+═══════════════════════════════════════════════════════════════ -->
+<header class="navbar">
+  <a href="../index.html" class="nav-logo">YT.</a>
+
+  <nav class="nav-links">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="../projects.html" class="nav-link">Projects</a>
+    <a href="../blog.html" class="nav-link">Writing</a>
+    <a href="../resume.html" class="nav-link">Resume</a>
+    <a href="../about.html" class="nav-link">About</a>
+  </nav>
+
+  <div class="nav-right">
+    <a href="https://github.com/rsm-ytiwari" target="_blank" rel="noopener" class="nav-icon" aria-label="GitHub">
+      <svg width="17" height="17" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+      </svg>
+    </a>
+    <a href="https://www.linkedin.com/in/yash-tiwari-here/" target="_blank" rel="noopener" class="nav-icon" aria-label="LinkedIn">
+      <svg width="17" height="17" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+        <rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+      </svg>
+    </a>
+    <button class="nav-icon" aria-label="Search">
+      <svg width="17" height="17" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </button>
+    <button class="theme-pill" id="theme-toggle" aria-label="Toggle theme">
+      <span id="theme-icon">
+        <svg width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </span>
+      <span id="theme-label">Dark</span>
+    </button>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     POST BANNER
+═══════════════════════════════════════════════════════════════ -->
+<div class="post-banner">
+  <a href="../blog.html" class="back-link">← All Writing</a>
+  <div class="post-meta-row">
+    <span class="p-year">Apr 2026</span>
+    <span class="post-sep">·</span>
+    <span class="b-read-time">8 min read</span>
+    <span class="post-sep">·</span>
+    <span class="p-year">Data Science</span>
+  </div>
+  <h1 class="post-title">Replicating Card &amp; Krueger (1994): When the Minimum Wage Didn’t Bite</h1>
+  <p class="post-subtitle">
+    A classic labor-econ puzzle, re-run from the raw survey data — and a look at what robust standard errors do to the headline.
+  </p>
+</div>
+<div class="post-body">
+<p>Textbook intuition says raising the minimum wage should shrink employment: the price of labor goes up, quantity demanded goes down. In 1992, New Jersey handed economists a natural experiment — it raised the state minimum from $4.25 to $5.05 while Pennsylvania kept theirs unchanged — and David Card and Alan Krueger walked 410 fast-food restaurants in both states through a before-and-after survey. When they ran the difference-in-differences, the sign flipped: NJ employment <em>rose</em> slightly relative to PA. The paper became one of the most-cited results in applied labor economics and earned Card a Nobel in 2021.</p>
+<p>This post re-runs their numbers from the original <code>public.dat</code> file, lands the headline coefficient essentially on top of the paper’s (2.326 vs.&nbsp;2.33), and then asks a small follow-up question the paper doesn’t: <strong>what happens if you relax the assumption that store-level variance is constant?</strong> The point estimate survives. The significance doesn’t.</p>
+<section id="caveats-up-front" class="level2">
+<h2 data-anchor-id="caveats-up-front">Caveats up front</h2>
+<p>Before the numbers, a quick honesty ledger:</p>
+<ul>
+<li><strong>All three anchor checks hit.</strong> NJ wave-1 FTE = 20.44, PA wave-1 FTE = 23.33, Table 4 NJ coefficient = 2.326 with OLS SE 1.192 (paper: 20.44 / 23.33 / 2.33 / 1.19). N = 357.</li>
+<li><strong>One numerical quirk.</strong> Table 3’s row 3 “Change in FTE” depends on how you compute it. Computing it as the <strong>difference of the two period means</strong> — what the paper appears to do, and what the figure below visualises — gives PA = −2.17, NJ = +0.59, DiD = +2.75 (paper +2.76). Computing it as the <strong>mean of per-store changes</strong> — the more natural <code>EMPTOT2 − EMPTOT</code> approach my <code>build.py</code> uses — gives PA = −2.28, NJ = +0.47, DiD = +2.75. Same DiD, 0.12-FTE drift in the individual state means. The gap reflects minor sample asymmetries (a few stores appear in one wave but not the other), not a real disagreement.</li>
+<li><strong>Everything below comes from a single run of <a href="https://github.com/rsm-ytiwari"><code>src/build.py</code></a></strong>, no manual adjustment.</li>
+</ul>
+</section>
+<section id="what-the-paper-studies" class="level2">
+<h2 data-anchor-id="what-the-paper-studies">What the paper studies</h2>
+<p>In April 1992, New Jersey raised its minimum wage from $4.25 to $5.05/hr while neighboring Pennsylvania kept its minimum unchanged. Card and Krueger surveyed 410 fast-food restaurants (Burger King, KFC, Roy Rogers, Wendy’s) in both states shortly before and about eight months after the increase, then used a difference-in-differences design to estimate the employment effect. The conventional prediction — that a binding minimum wage reduces employment — would have NJ employment fall relative to PA. Instead, the authors find the opposite: employment at NJ stores rose <em>slightly</em> relative to PA stores, yielding a positive (statistically weak) treatment effect on full-time-equivalent employment.</p>
+<p><strong>FTE</strong> is defined as <code>full-time workers + 0.5 × part-time workers + managers</code>. So a store with 10 full-timers, 8 part-timers, and 2 managers counts as 10 + 4 + 2 = 16 FTE.</p>
+</section>
+<section id="replication-setup" class="level2">
+<h2 data-anchor-id="replication-setup">Replication setup</h2>
+<p>Data: the authors’ <code>public.dat</code> (410 stores × 46 variables, two survey waves), parsed per the column order in their own <code>check.sas</code> input script. Derived variables (<code>EMPTOT</code>, <code>DEMP</code>, <code>GAP</code>, chain dummies, etc.) follow <code>check.sas</code> verbatim. The full pipeline — parse → derive → fit — runs as a single script end-to-end.</p>
+</section>
+<section id="table-2-store-characteristics-by-state" class="level2">
+<h2 data-anchor-id="table-2-store-characteristics-by-state">Table 2 — Store characteristics by state</h2>
+<p>Means of key store characteristics in wave 1 (pre-hike) and wave 2 (post-hike), separately for Pennsylvania (NJ = 0) and New Jersey (NJ = 1). Replicated values match the published table to within rounding.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th style="text-align: right;">PA mean</th>
+<th style="text-align: right;">PA SE</th>
+<th style="text-align: right;">NJ mean</th>
+<th style="text-align: right;">NJ SE</th>
+<th style="text-align: right;">NJ − PA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BK (share Burger King)</td>
+<td style="text-align: right;">0.443</td>
+<td style="text-align: right;">0.056</td>
+<td style="text-align: right;">0.411</td>
+<td style="text-align: right;">0.027</td>
+<td style="text-align: right;">−0.032</td>
+</tr>
+<tr class="even">
+<td>KFC</td>
+<td style="text-align: right;">0.152</td>
+<td style="text-align: right;">0.041</td>
+<td style="text-align: right;">0.205</td>
+<td style="text-align: right;">0.022</td>
+<td style="text-align: right;">0.054</td>
+</tr>
+<tr class="odd">
+<td>Roy Rogers</td>
+<td style="text-align: right;">0.215</td>
+<td style="text-align: right;">0.047</td>
+<td style="text-align: right;">0.248</td>
+<td style="text-align: right;">0.024</td>
+<td style="text-align: right;">0.033</td>
+</tr>
+<tr class="even">
+<td>Wendy’s</td>
+<td style="text-align: right;">0.190</td>
+<td style="text-align: right;">0.044</td>
+<td style="text-align: right;">0.136</td>
+<td style="text-align: right;">0.019</td>
+<td style="text-align: right;">−0.054</td>
+</tr>
+<tr class="odd">
+<td>Company-owned</td>
+<td style="text-align: right;">0.354</td>
+<td style="text-align: right;">0.054</td>
+<td style="text-align: right;">0.341</td>
+<td style="text-align: right;">0.026</td>
+<td style="text-align: right;">−0.013</td>
+</tr>
+<tr class="even">
+<td>FTE (wave 1)</td>
+<td style="text-align: right;">23.331</td>
+<td style="text-align: right;">1.351</td>
+<td style="text-align: right;">20.439</td>
+<td style="text-align: right;">0.508</td>
+<td style="text-align: right;"><strong>−2.892</strong></td>
+</tr>
+<tr class="odd">
+<td>% full-time (wave 1)</td>
+<td style="text-align: right;">0.350</td>
+<td style="text-align: right;">0.027</td>
+<td style="text-align: right;">0.328</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">−0.022</td>
+</tr>
+<tr class="even">
+<td>Starting wage (wave 1)</td>
+<td style="text-align: right;">4.630</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">4.612</td>
+<td style="text-align: right;">0.020</td>
+<td style="text-align: right;">−0.018</td>
+</tr>
+<tr class="odd">
+<td>At minimum (wave 1)</td>
+<td style="text-align: right;">0.329</td>
+<td style="text-align: right;">0.053</td>
+<td style="text-align: right;">0.305</td>
+<td style="text-align: right;">0.025</td>
+<td style="text-align: right;">−0.024</td>
+</tr>
+<tr class="even">
+<td>Meal price (wave 1)</td>
+<td style="text-align: right;">3.042</td>
+<td style="text-align: right;">0.069</td>
+<td style="text-align: right;">3.351</td>
+<td style="text-align: right;">0.037</td>
+<td style="text-align: right;">0.309</td>
+</tr>
+<tr class="odd">
+<td>Hours open (wave 1)</td>
+<td style="text-align: right;">14.525</td>
+<td style="text-align: right;">0.332</td>
+<td style="text-align: right;">14.418</td>
+<td style="text-align: right;">0.153</td>
+<td style="text-align: right;">−0.107</td>
+</tr>
+<tr class="even">
+<td>Bonus program</td>
+<td style="text-align: right;">0.291</td>
+<td style="text-align: right;">0.051</td>
+<td style="text-align: right;">0.236</td>
+<td style="text-align: right;">0.023</td>
+<td style="text-align: right;">−0.055</td>
+</tr>
+<tr class="odd">
+<td>FTE (wave 2)</td>
+<td style="text-align: right;">21.166</td>
+<td style="text-align: right;">0.943</td>
+<td style="text-align: right;">21.027</td>
+<td style="text-align: right;">0.520</td>
+<td style="text-align: right;"><strong>−0.138</strong></td>
+</tr>
+<tr class="even">
+<td>% full-time (wave 2)</td>
+<td style="text-align: right;">0.304</td>
+<td style="text-align: right;">0.028</td>
+<td style="text-align: right;">0.359</td>
+<td style="text-align: right;">0.014</td>
+<td style="text-align: right;">0.055</td>
+</tr>
+<tr class="odd">
+<td>Starting wage (wave 2)</td>
+<td style="text-align: right;">4.617</td>
+<td style="text-align: right;">0.042</td>
+<td style="text-align: right;">5.081</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: right;"><strong>0.463</strong></td>
+</tr>
+<tr class="even">
+<td>At new minimum (wave 2)</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">0.855</td>
+<td style="text-align: right;">0.019</td>
+<td style="text-align: right;"><strong>0.842</strong></td>
+</tr>
+<tr class="odd">
+<td>Meal price (wave 2)</td>
+<td style="text-align: right;">3.027</td>
+<td style="text-align: right;">0.067</td>
+<td style="text-align: right;">3.415</td>
+<td style="text-align: right;">0.036</td>
+<td style="text-align: right;">0.388</td>
+</tr>
+<tr class="even">
+<td>Hours open (wave 2)</td>
+<td style="text-align: right;">14.654</td>
+<td style="text-align: right;">0.327</td>
+<td style="text-align: right;">14.420</td>
+<td style="text-align: right;">0.152</td>
+<td style="text-align: right;">−0.234</td>
+</tr>
+<tr class="odd">
+<td>Special low-wage exemption</td>
+<td style="text-align: right;">0.234</td>
+<td style="text-align: right;">0.049</td>
+<td style="text-align: right;">0.203</td>
+<td style="text-align: right;">0.023</td>
+<td style="text-align: right;">−0.031</td>
+</tr>
+</tbody>
+</table>
+<p>Two things jump out:</p>
+<ol type="1">
+<li><strong>The treatment did bite.</strong> NJ’s share of stores at the prevailing minimum jumped from 30.5% to 85.5% after April 1992 — almost every NJ store was now paying exactly $5.05. PA didn’t move. This is a binding wage floor, not a nominal one.</li>
+<li><strong>NJ stores were smaller to begin with.</strong> Wave-1 FTE is 20.4 in NJ vs.&nbsp;23.3 in PA — a baseline gap of ~2.9 FTE. Any credible DiD has to explain why that gap shrinks after the wage hike.</li>
+</ol>
+</section>
+<section id="table-3-fte-before-after-and-change" class="level2">
+<h2 data-anchor-id="table-3-fte-before-after-and-change">Table 3 — FTE before, after, and change</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">PA mean</th>
+<th style="text-align: right;">PA SE</th>
+<th style="text-align: right;">NJ mean</th>
+<th style="text-align: right;">NJ SE</th>
+<th style="text-align: right;">NJ − PA</th>
+<th style="text-align: right;">Diff SE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>FTE before</td>
+<td style="text-align: right;">23.331</td>
+<td style="text-align: right;">1.351</td>
+<td style="text-align: right;">20.439</td>
+<td style="text-align: right;">0.508</td>
+<td style="text-align: right;">−2.892</td>
+<td style="text-align: right;">1.444</td>
+</tr>
+<tr class="even">
+<td>FTE after</td>
+<td style="text-align: right;">21.166</td>
+<td style="text-align: right;">0.943</td>
+<td style="text-align: right;">21.027</td>
+<td style="text-align: right;">0.520</td>
+<td style="text-align: right;">−0.138</td>
+<td style="text-align: right;">1.077</td>
+</tr>
+<tr class="odd">
+<td>Change in FTE</td>
+<td style="text-align: right;">−2.283</td>
+<td style="text-align: right;">1.253</td>
+<td style="text-align: right;">0.467</td>
+<td style="text-align: right;">0.481</td>
+<td style="text-align: right;"><strong>+2.750</strong></td>
+<td style="text-align: right;">1.342</td>
+</tr>
+</tbody>
+</table>
+<p>The headline is the last cell: the NJ − PA difference in FTE change is <strong>+2.75</strong> (paper reports <strong>+2.76</strong>). Positive. Opposite sign from the textbook. The 0.12-FTE drift on the individual PA / NJ change values is the quirk flagged in the caveats above — it comes from using mean-of-per-store-changes instead of difference-of-means, and the DiD is identical either way.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="card-krueger-replication-assets/fig1-did-fte.png" class="img-fluid figure-img"></p>
+<figcaption>Difference-in-differences: average FTE per store, Pennsylvania and New Jersey, before and after the NJ minimum-wage hike. The gap between the two trajectories is the 2.75-FTE DiD.</figcaption>
+</figure>
+</div>
+<p>The picture is the whole paper in one chart. If you believe PA was a valid counterfactual — that NJ stores would have followed the same trend absent the hike — you read the gap between the two lines at wave 2 as the causal effect of the minimum wage on employment. And that gap is positive.</p>
+</section>
+<section id="table-4-col-i-difference-in-differences-regression" class="level2">
+<h2 data-anchor-id="table-4-col-i-difference-in-differences-regression">Table 4 col (i) — Difference-in-differences regression</h2>
+<p>The same result, one more time, as a regression. Change in FTE is regressed on a New Jersey dummy. The sample follows <code>check.sas:152-153</code>: stores with a valid wave-2 employment reading, either a valid wage change or permanent closure. N = 357.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">Coefficient</th>
+<th style="text-align: right;">OLS SE</th>
+<th style="text-align: right;">HC1 SE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Constant</td>
+<td style="text-align: right;">−2.127</td>
+<td style="text-align: right;">1.074</td>
+<td style="text-align: right;">1.372</td>
+</tr>
+<tr class="even">
+<td>NJ dummy</td>
+<td style="text-align: right;"><strong>2.326</strong></td>
+<td style="text-align: right;"><strong>1.192</strong></td>
+<td style="text-align: right;"><strong>1.452</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The NJ coefficient is <strong>2.326</strong> with OLS standard error <strong>1.192</strong>, against the paper’s 2.33 (1.19). Point estimate and standard error both match essentially exactly. The coefficient reads as “NJ stores gained roughly 2.3 FTE per store relative to PA stores after the minimum wage rose,” and is marginally significant under OLS (t ≈ 1.95, so the 95% CI just barely touches zero).</p>
+</section>
+<section id="additional-robust-standard-errors" class="level2">
+<h2 data-anchor-id="additional-robust-standard-errors">Additional — robust standard errors</h2>
+<p>The paper reports plain OLS standard errors, which assume residual variance is constant across stores. That assumption is suspect here on inspection alone: a store employing 40 FTE has far more room to swing by ±5 workers than a store employing 10. Splitting the Table 4 sample at the median baseline FTE (19.5) makes the asymmetry concrete — residual variance is <strong>41.7</strong> among small stores versus <strong>102.2</strong> among large stores, a ratio of <strong>2.45×</strong>. That’s textbook heteroskedasticity.</p>
+<p>Heteroskedasticity-consistent (HC1) standard errors are the minimal fix. The HC1 standard error on the NJ coefficient is <strong>1.452</strong> — about 22% larger than the OLS 1.192. Under HC1, the coefficient is no longer significant at conventional levels (t ≈ 1.60, p ≈ 0.11). The point estimate — the core finding — is unchanged. But inference tightens from “marginally positive” to “statistically indistinguishable from zero” once heteroskedasticity is allowed in.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="card-krueger-replication-assets/fig2-ols-vs-hc1.png" class="img-fluid figure-img"></p>
+<figcaption>OLS vs HC1 95% CIs on the NJ coefficient. Same point estimate, different inference: OLS just barely excludes zero, HC1 clearly does not.</figcaption>
+</figure>
+</div>
+<p>This doesn’t overturn Card &amp; Krueger’s broader evidence — the 1994 paper rests on many specifications, including the wage-gap regressions in Table 4 columns iii–v, and the book-length follow-up marshalls much more. But it does illustrate how sensitive the headline t-statistic is to a standard-error choice that rarely gets discussed in pop summaries of the result. Clustering by chain was considered and rejected — only four chains is too few for cluster-robust inference to be well-behaved.</p>
+</section>
+<section id="so-what" class="level2">
+<h2 data-anchor-id="so-what">So what</h2>
+<p>The Card &amp; Krueger point estimate is remarkably robust: it survives different samples, different software, different standard-error assumptions. What <em>doesn’t</em> survive is the clean “NJ employment went up, and it was statistically significant” story, at least not under HC1. The coefficient is still positive, the direction still counterintuitive — but under the more defensible variance assumption, the estimate stops being distinguishable from zero. Whether you call that “the effect is positive but noisily measured” or “the effect is effectively zero” says more about your priors than about the data.</p>
+</section>
+<section id="reproducibility" class="level2">
+<h2 data-anchor-id="reproducibility">Reproducibility</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run <span class="at">--with</span> numpy <span class="at">--with</span> pandas <span class="at">--with</span> statsmodels python src/build.py</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run <span class="at">--with</span> numpy <span class="at">--with</span> pandas <span class="at">--with</span> statsmodels <span class="at">--with</span> matplotlib <span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    python src/outputs/make_figures.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The first command writes table CSVs to <code>src/outputs/tables/</code>. The second re-generates the two figures in this post.</p>
+</section>
+<section id="references" class="level2">
+<h2 data-anchor-id="references">References</h2>
+<p>Card, David, and Alan B. Krueger. 1994. “Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania.” <em>American Economic Review</em> 84 (4): 772–793.</p>
+</section>
+</div>
+
+
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
