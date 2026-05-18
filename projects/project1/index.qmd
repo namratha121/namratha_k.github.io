@@ -4,8 +4,8 @@ author: Namratha K
 date: "March 4, 2026"
 ---
 
-## Sub-Header
-Here is a plot:
+## Overview
+Let's investigate the relationship between fuel efficiency (`mpg`) and engine displacement in the **Auto MPG** dataset.
 
 ```{python}
 #| message: false
@@ -22,9 +22,11 @@ df = sns.load_dataset("mpg").dropna()
 ##scatter plot
 
 sns.scatterplot(x="mpg", y="displacement", data=df)
+plt.xlabel("Fuel Efficiency (mpg)")
+plt.ylabel("Engine Displacement (cu. in.)")
 plt.show()
 ```
 
 
-## Header
-Let's investigate the relationship between fuel efficiency (`mpg`) and engine displacement (`disp`) from the `mtcars` dataset. Those variables have a correlation of `{python} round(df["mpg"].corr(df["displacement"]), 2)`.
+## Analysis
+Those variables have a correlation of `{python} round(df["mpg"].corr(df["displacement"]), 2)`.
