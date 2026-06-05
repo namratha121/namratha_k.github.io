@@ -1,0 +1,275 @@
+/* ══════════════════════════════════════════════════════════
+   PRESENTATION THEME
+   Background (#0d1117) matches all GIF/PNG backgrounds exactly
+   so visuals blend seamlessly into slides.
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Base ── */
+.reveal {
+  font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  font-size: 28px;
+  color: #e6edf3;
+  background: #0d1117;
+}
+
+.reveal-viewport {
+  background: #0d1117;
+}
+
+/* ── Title Slide ── */
+.reveal .title-slide {
+  text-align: left;
+  padding: 3em 3.5em !important;
+}
+
+.reveal .title-slide::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #1f6feb 0%, #58a6ff 50%, #1f6feb 100%);
+}
+
+/* Decorative right-side glow on title slide */
+.reveal .title-slide::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 45%;
+  height: 100%;
+  background: radial-gradient(ellipse at top right, rgba(31, 111, 235, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.reveal .title-slide h1.title {
+  font-size: 2.4em !important;
+  font-weight: 800 !important;
+  color: #f0f6fc !important;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  border: none !important;
+  padding: 0 !important;
+  margin-bottom: 0.25em;
+}
+
+.reveal .title-slide .subtitle {
+  font-size: 1.05em;
+  color: #58a6ff;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin-bottom: 3em;
+}
+
+.reveal .title-slide .author {
+  font-size: 0.88em;
+  color: #8b949e;
+  margin-bottom: 0.15em;
+}
+
+.reveal .title-slide .date {
+  font-size: 0.72em;
+  color: #484f58;
+}
+
+/* ── Top accent bar (content slides only) ── */
+.reveal .slides section:not(.title-slide)::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1f6feb, #58a6ff, #1f6feb);
+}
+
+/* ── Content Headings ── */
+.reveal h2 {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #f0f6fc;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  border: none !important;
+  padding: 0 !important;
+  margin-top: 0.25em;
+  margin-bottom: 0.55em;
+}
+
+/* Blue accent bar under heading */
+.reveal h2::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 2.8em;
+  background: linear-gradient(90deg, #58a6ff, #1f6feb);
+  border-radius: 2px;
+  margin-top: 0.2em;
+}
+
+.reveal h3 {
+  font-size: 0.88em;
+  font-weight: 600;
+  color: #58a6ff;
+  margin-bottom: 0.4em;
+}
+
+/* ── Body ── */
+.reveal p, .reveal li {
+  color: #c9d1d9;
+  line-height: 1.65;
+}
+
+.reveal ul, .reveal ol {
+  margin-left: 1.3em;
+}
+
+.reveal li {
+  margin-bottom: 0.35em;
+}
+
+.reveal strong {
+  color: #79c0ff;
+  font-weight: 600;
+}
+
+.reveal em {
+  color: #a5f3fc;
+  font-style: italic;
+}
+
+/* ── Blockquote ── */
+.reveal blockquote {
+  background: rgba(31, 111, 235, 0.08);
+  border-left: 4px solid #58a6ff !important;
+  border-radius: 0 8px 8px 0;
+  padding: 0.6em 1.2em;
+  margin: 0.7em 0;
+  color: #cae8ff;
+  font-style: italic;
+  font-size: 0.9em;
+  box-shadow: none;
+}
+
+/* ── Tables ── */
+.reveal table {
+  font-size: 0.78em;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #30363d;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+}
+
+.reveal table thead tr {
+  background: #1f6feb;
+}
+
+.reveal table th {
+  color: #ffffff;
+  padding: 10px 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.reveal table td {
+  padding: 9px 18px;
+  border-top: 1px solid #21262d;
+  color: #e6edf3;
+  background: #161b22;
+}
+
+.reveal table tbody tr:nth-child(even) td {
+  background: #1c2128;
+}
+
+/* ── Code Blocks ── */
+.reveal pre {
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+  margin: 0;
+  width: 100%;
+}
+
+.reveal pre code {
+  font-size: 0.7em;
+  line-height: 1.75;
+  padding: 1.2em 1.5em;
+  background: #010409 !important;
+  border-radius: 10px;
+}
+
+/* ── Callout Boxes ── */
+.reveal .callout {
+  border-radius: 8px;
+  font-size: 0.82em;
+  margin: 0.6em 0;
+}
+
+.reveal .callout-tip {
+  background: rgba(46, 160, 67, 0.1) !important;
+  border-left: 4px solid #3fb950 !important;
+  border: 1px solid rgba(46, 160, 67, 0.2) !important;
+}
+
+.reveal .callout-note {
+  background: rgba(31, 111, 235, 0.1) !important;
+  border-left: 4px solid #58a6ff !important;
+  border: 1px solid rgba(31, 111, 235, 0.2) !important;
+}
+
+.reveal .callout-tip .callout-title,
+.reveal .callout-note .callout-title {
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+/* ── Math ── */
+.reveal .MathJax {
+  color: #e3b341 !important;
+}
+
+/* ── Columns ── */
+.reveal .columns {
+  gap: 2.5em;
+  align-items: start;
+}
+
+/* ── Footer ── */
+.reveal .footer {
+  color: #30363d;
+  font-size: 0.58em;
+}
+
+/* ── Slide Number ── */
+.reveal .slide-number {
+  color: #30363d;
+  background: transparent;
+  font-size: 0.65em;
+}
+
+/* ── Progress Bar ── */
+.reveal .progress span {
+  background: linear-gradient(90deg, #1f6feb, #58a6ff) !important;
+}
+
+/* ── Controls ── */
+.reveal .controls {
+  color: #58a6ff;
+}
+
+/* ── Fragments ── */
+.reveal .fragment {
+  transition: opacity 0.35s ease;
+}
+
+/* ── Captions ── */
+.reveal figcaption {
+  font-size: 0.6em;
+  color: #484f58;
+  text-align: center;
+  margin-top: 0.3em;
+}

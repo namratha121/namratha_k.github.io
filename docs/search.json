@@ -964,5 +964,61 @@
     "title": "CLAUDE.md",
     "section": "",
     "text": "The /docs folder is part of the repo. If you change source files but don’t re-render, the live site won’t reflect your changes. Always: edit → quarto render → commit (both source and rebuilt /docs) → push."
+  },
+  {
+    "objectID": "gradient_descent_presentation/gradient_descent_mle.html#why-do-we-need-to-optimize",
+    "href": "gradient_descent_presentation/gradient_descent_mle.html#why-do-we-need-to-optimize",
+    "title": "marketing analytics",
+    "section": "Why Do We Need to Optimize?",
+    "text": "Why Do We Need to Optimize?\n\n\nMaximum Likelihood Estimation asks:\n\n“What parameter value makes my observed data most probable?”\n\n\\[\\hat{\\theta} = \\underset{\\theta}{\\arg\\max} \\; \\ell(\\theta \\mid \\mathbf{x})\\]\n\nClosed-form solutions exist for simple models (Poisson, Gaussian)\nFor complex models (logistic, mixture, neural nets) → no formula\nWe need an algorithm to climb to the peak\n\n\n\n\n\n\n\n\nThe core idea\nThe log-likelihood is a surface. MLE means finding the top of that surface.\n\n\n\n\nThink of it like hiking in fog — you can’t see the peak, but you can always feel which way is uphill."
+  },
+  {
+    "objectID": "gradient_descent_presentation/gradient_descent_mle.html#the-landscape-a-log-likelihood-surface",
+    "href": "gradient_descent_presentation/gradient_descent_mle.html#the-landscape-a-log-likelihood-surface",
+    "title": "Climbing the Likelihood Mountain",
+    "section": "The Landscape: A Log-Likelihood Surface",
+    "text": "The Landscape: A Log-Likelihood Surface\n\n\nExample: Normal model, estimating \\(\\mu\\) and \\(\\sigma\\)\n\\[\\ell(\\mu,\\sigma) = -\\tfrac{n}{2}\\log\\sigma^2 - \\tfrac{1}{2\\sigma^2}\\sum(x_i-\\mu)^2\\]\n\n\nTwo parameters → 2D surface\nThe peak = MLE \\((\\hat{\\mu},\\, \\hat{\\sigma})\\)\nThe gradient \\(\\nabla \\ell\\) points uphill — telling us which way to step"
+  },
+  {
+    "objectID": "gradient_descent_presentation/gradient_descent_mle.html#the-algorithm-gradient-ascent",
+    "href": "gradient_descent_presentation/gradient_descent_mle.html#the-algorithm-gradient-ascent",
+    "title": "Climbing the Likelihood Mountain",
+    "section": "The Algorithm: Gradient Ascent",
+    "text": "The Algorithm: Gradient Ascent\n\n\nUpdate rule — repeat until convergence:\n\\[\\theta^{(t+1)} = \\theta^{(t)} + \\alpha \\cdot \\nabla_\\theta \\, \\ell\\!\\left(\\theta^{(t)}\\right)\\]\n\n\n\nSymbol\nMeaning\n\n\n\n\n\\(\\theta^{(t)}\\)\nCurrent parameter estimate\n\n\n\\(\\alpha\\)\nLearning rate (step size)\n\n\n\\(\\nabla_\\theta \\ell\\)\nGradient — which way is uphill\n\n\n\n\nStop when the slope flattens: \\(\\|\\nabla\\ell\\| &lt; \\varepsilon\\)\n\n\n# Gradient Ascent — Poisson MLE\nlam   = 0.5    # initial guess\nalpha = 0.15   # learning rate\n\nfor step in range(100):\n    grad = sum(x) / lam - n\n    lam  = lam + alpha * grad\n\n    if abs(grad) &lt; 1e-4:\n        break\n\n# converges to lam ≈ x̄  (true MLE)"
+  },
+  {
+    "objectID": "gradient_descent_presentation/gradient_descent_mle.html#the-walk-to-the-peak",
+    "href": "gradient_descent_presentation/gradient_descent_mle.html#the-walk-to-the-peak",
+    "title": "marketing analytics",
+    "section": "The Walk to the Peak",
+    "text": "The Walk to the Peak\n\n\n\n\nGradient ascent stepping up the 1D log-likelihood\n\n\n\n\n\n\n\n\n\n\nEach dot is one iteration. The algorithm feels the gradient and steps uphill — slowing naturally as the slope flattens near \\(\\hat{\\lambda} = \\bar{x}\\)."
+  },
+  {
+    "objectID": "gradient_descent_presentation/gradient_descent_mle.html#the-catch-learning-rate-matters",
+    "href": "gradient_descent_presentation/gradient_descent_mle.html#the-catch-learning-rate-matters",
+    "title": "Climbing the Likelihood Mountain",
+    "section": "The Catch: Learning Rate Matters",
+    "text": "The Catch: Learning Rate Matters\n\n\n\nα too large Overshoots, oscillates, diverges\n\nα just right ✓ Smooth, fast convergence\n\nα too small Converges, but painfully slow\n\n\nIn practice: adaptive optimizers like Adam and L-BFGS tune \\(\\alpha\\) automatically — this is why they dominate in real ML pipelines."
+  },
+  {
+    "objectID": "gradient_descent_presentation/gradient_descent_mle.html",
+    "href": "gradient_descent_presentation/gradient_descent_mle.html",
+    "title": "marketing analytics",
+    "section": "",
+    "text": "to— title: “Climbing the Likelihood Mountain” subtitle: “How Gradient Descent Finds the MLE” author: “Nama” format: revealjs: theme: dark transition: fade slide-number: true highlight-style: github-dark code-block-bg: true footer: “MSBA · Marketing Analytics” css: slides.css fig-align: center incremental: false execute: echo: false warning: false —"
+  },
+  {
+    "objectID": "gradient_descent_presentation/gradient_descent_mle.html#the-problem-when-theres-no-formula",
+    "href": "gradient_descent_presentation/gradient_descent_mle.html#the-problem-when-theres-no-formula",
+    "title": "Climbing the Likelihood Mountain",
+    "section": "The Problem: When There’s No Formula",
+    "text": "The Problem: When There’s No Formula\n\n\nMaximum Likelihood Estimation asks:\n\n“What parameter values make my observed data most probable?”\n\n\\[\\hat{\\theta} = \\underset{\\theta}{\\arg\\max} \\; \\ell(\\theta \\mid \\mathbf{x})\\]\n\nSimple models (Poisson, Gaussian) → closed-form solution\nComplex models (logistic regression, MNL) → no formula\nWe need an algorithm to climb to the peak\n\n\n\n\n\nThe Core Idea\nThe log-likelihood is a surface. MLE = finding the top of that surface.\n\n\n\n\nThink of it like hiking in fog — you can’t see the peak, but you can always feel which way is uphill."
+  },
+  {
+    "objectID": "gradient_descent_presentation/gradient_descent_mle.html#watching-it-climb",
+    "href": "gradient_descent_presentation/gradient_descent_mle.html#watching-it-climb",
+    "title": "Climbing the Likelihood Mountain",
+    "section": "Watching It Climb",
+    "text": "Watching It Climb\n\n\n\n\n\nEach dot is one iteration. The algorithm feels the gradient and steps uphill — slowing naturally as the slope flattens near \\(\\hat{\\lambda} = \\bar{x}\\)."
   }
 ]
